@@ -62,11 +62,17 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
             $table->longText('exames');
             $table->longText('conclusao');
             $table->string('foto_1');
+            $table->longText('comentario_1');
             $table->string('foto_2');
+            $table->longText('comentario_2');
             $table->string('foto_3');
+            $table->longText('comentario_3');
             $table->string('foto_4');
+            $table->longText('comentario_4');
             $table->string('foto_5');
+            $table->longText('comentarios_5');
             $table->string('foto_6');
+            $table->longText('comentario_6');
             $table->softDeletes();
             $table->timestamps();
         });
