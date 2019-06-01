@@ -15,8 +15,9 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
     
     {
         Schema::create('laudos_furtos_qualificados', function (Blueprint $table) {
-            $table->bigIncrements('laudos_furtos_qualificados_id')->unsigned();
-            $table->foreign('laudos_furtos_qualificados_id')->references('id')->on('users');
+            $table->bigIncrements('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('numero_do_laudo');
             $table->date('data_da_ocorrencia');
             $table->dateTime('data_e_hora_do_acionamento');
@@ -66,6 +67,7 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
             $table->string('foto_4');
             $table->string('foto_5');
             $table->string('foto_6');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
