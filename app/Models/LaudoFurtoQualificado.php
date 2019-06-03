@@ -1,12 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class LaudoFurtosQualificados extends Model
+class LaudoFurtoQualificado extends Model
 {
+    protected $table = "laudos_furtos_qualificados";
+
     protected $fillable = [
         'user_id', 'numero_do_laudo', 'data_da_ocorrencia', 'data_hora_do_acionamento', 'data_hora_da_chegada_ao_local',
         'perito', 'diretor', 'numero_da_requisicao', 'numero_do_procedimento', 'origem_da_requisicao',
@@ -18,5 +20,8 @@ class LaudoFurtosQualificados extends Model
         'foto_4', 'comentario_4', 'foto_5', 'comentarios_5', 'foto_6', 'comentarios_6'
     ];
 
-    
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

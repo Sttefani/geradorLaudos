@@ -12,9 +12,7 @@ class LaudoFurtoQualificadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view ('laudos_furtos_qualificados');
-    }
+    { }
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +21,7 @@ class LaudoFurtoQualificadoController extends Controller
      */
     public function create()
     {
-        //
+        return view('laudo-furto-qualificado.create');
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\LaudoFurtosQualificados;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->call(Laudos_furtos_qualificados_Seeder::class);
+        $this->call(LaudoFurtosQualificados::class);
     }
 }
