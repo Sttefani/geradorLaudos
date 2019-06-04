@@ -83,7 +83,7 @@
             <option value="residencia">Residência</option>
             <option value="escritorio">Escritório</option>
             <option value="comercio">Comércio</option>
-            <option value="armazem">Armazem</option>
+            <option value="armazem">Armazém</option>
             <option value="templo_religioso">Templo Religioso</option>
           </select>
         </div>
@@ -133,7 +133,7 @@
             <option value="alvenaria_bom_acabamento">Alvenaria bom acabamento</option>
             <option value="alvenaria_mau_acabamento">Alvenaria mau acabamento</option>
             <option value="madeira">Madeira</option>
-            <option value="material_pre_fabricado">Material pré fabricado</option>
+            <option value="material_pre_fabricado">Material pré-fabricado</option>
           </select>
         </div>
       </div>
