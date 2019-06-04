@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-  <h3>Formulários de Furto Qualificado</h3>
+  <h3>Formulário de Furto Qualificado</h3>
 
   <form class="mt-4">
     <fieldset class="scheduler-border">
@@ -59,7 +59,7 @@
 
       <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="numero_do_procedimento">Nº do procedimento</label>
+            <label for="numero_do_procedimento">Procedimento</label>
             <input type="text" class="form-control" id="numero_do_procedimento" name="numero_do_procedimento">
           </div>
         <div class="form-group col-md-4">
@@ -114,7 +114,7 @@
 
       <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="area_construida">Área contruida</label>
+            <label for="area_construida">Área construída</label>
             <input type="number" class="form-control" id="area_construida" name="area_construida">
         </div>
         <div class="form-group col-md-2">
@@ -155,7 +155,7 @@
           <select id="cobertura" name="cobertura" class="form-control">
             <option selected>Selecione...</option>
             <option value="telha_de_barro">Telha de barro</option>
-            <option value="firocimento">Firocimento</option>
+            <option value="fibrocimento">Firocimento</option>
             <option value="concreto">Concreto</option>
             <option value="madeira">Madeira</option>
             <option value="zinco">Zinco</option>
