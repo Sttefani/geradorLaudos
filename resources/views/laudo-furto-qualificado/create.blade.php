@@ -14,24 +14,35 @@
           <input type="text" class="form-control" id="user" name="user">
         </div>
         <div class="form-group col-md-4">
-          <label for="numeroLaudo">Nº do laudo</label>
-          <input type="password" class="form-control" id="numeroLaudo" name="numeroLaudo">
+          <label for="numero_do_laudo">Nº do laudo</label>
+          <input type="password" class="form-control" id="numero_do_laudo" name="numero_do_laudo">
         </div>
         <div class="form-group col-md-4">
-          <label for="dataOcorrencia">Data da ocorrência</label>
-          <input type="date" class="form-control" id="dataOcorrencia" name="dataOcorrenca">
+          <label for="data_da_ocorrencia">Data da ocorrência</label>
+          <input type="date" class="form-control" id="data_da_ocorrencia" name="data_da_ocorrencia">
         </div>
       </div>
 
       <div class="form-row">
-        <div class="form-group col-md-2">
-          <label for="dataAcionamento">Data do acionamento</label>
-          <input type="date" class="form-control" id="dataAcionamento" name="dataAcionamento">
+        <div class="form-group col-md-3">
+          <label for="data_do_acionamento">Data do acionamento</label>
+          <input type="date" class="form-control" id="data_do_acionamento" name="data_do_acionamento">
         </div>
-        <div class="form-group col-md-2">
-          <label for="horaAcionamento">Hora do acionamento</label>
-          <input type="time" class="form-control" id="horaAcionamento" name="horaAcionamento">
+        <div class="form-group col-md-3">
+          <label for="hora_do_acionamento">Hora do acionamento</label>
+          <input type="time" class="form-control" id="hora_do_acionamento" name="hora_do_acionamento">
         </div>
+        <div class="form-group col-md-3">
+          <label for="data_da_chegada_local">Data da chegada ao local</label>
+          <input type="date" class="form-control" id="data_da_chegada_local" name="data_da_chegada_local">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="hora_da_chegada_local">Hora da chegado ao local</label>
+          <input type="time" class="form-control" id="hora_da_chegada_local" name="hora_da_chegada_local">
+        </div>
+      </div>
+
+      <div class="form-row">
         <div class="form-group col-md-4">
           <label for="perito">Perito</label>
           <input type="text" class="form-control" id="perito" name="perito">
@@ -40,20 +51,24 @@
           <label for="diretor">Diretor</label>
           <input type="text" class="form-control" id="diretor" name="diretor">
         </div>
+        <div class="form-group col-md-4">
+          <label for="numero_da_requisicao">Nº da requisição</label>
+          <input type="text" class="form-control" id="numero_da_requisicao" name="numero_da_requisicao">
+        </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-4">
-          <label for="numeroRequisicao">Nº da requisição</label>
-          <input type="text" class="form-control" id="numeroRequisicao" name="numeroRequisicao">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="numeroProcedimento">Nº do procedimento</label>
-            <input type="text" class="form-control" id="numeroProcedimento" name="numeroProcedimento">
+            <label for="numero_do_procedimento">Nº do procedimento</label>
+            <input type="text" class="form-control" id="numero_do_procedimento" name="numero_do_procedimento">
           </div>
         <div class="form-group col-md-4">
-          <label for="origemRequisicao">Origem da requisição</label>
-          <input type="text" class="form-control" id="origemRequisicao" name="origemRequisicao">
+          <label for="origem_da_requisicao">Origem da requisição</label>
+          <input type="text" class="form-control" id="origem_da_requisicao" name="origem_da_requisicao">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="autoridade_requisitante">Autoridade requisitante</label>
+          <input type="text" class="form-control" id="autoridade_requisitante" name="autoridade_requisitante">
         </div>
       </div>
     </fieldset>
@@ -73,46 +88,46 @@
           </select>
         </div>
         <div class="form-group col-md-4">
-            <label for="recuoFrontal">Recuo frontal</label>
-            <input type="number" class="form-control" id="recuoFrontal" name="recuoFrontal">
+            <label for="recuo_frontal">Recuo frontal</label>
+            <input type="number" class="form-control" id="recuo_frontal" name="recuo_frontal">
         </div>
         <div class="form-group col-md-4">
-            <label for="recuoLateralDireita">Recuo lateral direta</label>
-            <input type="number" class="form-control" id="recuoLateralDireita" name="recuoLateralDireita">
+            <label for="recuo_lateral_direita">Recuo lateral direta</label>
+            <input type="number" class="form-control" id="recuo_lateral_direita" name="recuo_lateral_direita">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="recuoLateralEsquerda">Recuo lateral esquerda</label>
-            <input type="number" class="form-control" id="recuoLateralEsquerda" name="recuoLateralEsquerda">
+            <label for="recuo_lateral_esquerda">Recuo lateral esquerda</label>
+            <input type="number" class="form-control" id="recuo_lateral_esquerda" name="recuo_lateral_esquerda">
         </div>
         <div class="form-group col-md-4">
-            <label for="recuoFundos">Recuo fundos</label>
-            <input type="number" class="form-control" id="recuoFundos" name="recuoFundos">
+            <label for="recuo_fundos">Recuo fundos</label>
+            <input type="number" class="form-control" id="recuo_fundos" name="recuo_fundos">
         </div>
         <div class="form-group col-md-4">
-            <label for="areaImovel">Área do imóvel</label>
-            <input type="number" class="form-control" id="areaImovel" name="areaImovel">
+            <label for="area_do_imovel">Área do imóvel</label>
+            <input type="number" class="form-control" id="area_do_imovel" name="area_do_imovel">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="areaContruida">Área contruida</label>
-            <input type="number" class="form-control" id="areaContruida" name="areaContruida">
+            <label for="area_construida">Área contruida</label>
+            <input type="number" class="form-control" id="area_construida" name="area_construida">
         </div>
         <div class="form-group col-md-2">
-            <label for="numeroPavimentos">Nº de pavimentos</label>
-            <input type="number" class="form-control" id="numeroPavimentos" name="numeroPavimentos">
+            <label for="numero_de_pavimentos">Nº de pavimentos</label>
+            <input type="number" class="form-control" id="numero_de_pavimentos" name="numero_de_pavimentos">
         </div>
         <div class="form-group col-md-2">
-            <label for="numeroCompartimentos">Nº de compartimentos</label>
-            <input type="number" class="form-control" id="numeroCompartimentos" name="numeroCompartimentos">
+            <label for="numero_de_compartimentos">Nº de compartimentos</label>
+            <input type="number" class="form-control" id="numero_de_compartimentos" name="numero_de_compartimentos">
         </div>
         <div class="form-group col-md-4">
-          <label for="tipoContrucao">Tipo de construção</label>
-          <select id="tipoContrucao" name="tipoContrucao" class="form-control">
+          <label for="tipo_de_construcao">Tipo de construção</label>
+          <select id="tipo_de_construcao" name="tipo_de_construcao" class="form-control">
             <option selected>Selecione...</option>
             <option value="concreto">Concreto</option>
             <option value="alvenaria_bom_acabamento">Alvenaria bom acabamento</option>
@@ -185,8 +200,8 @@
           </select>
         </div>
         <div class="form-group col-md-4">
-          <label for="estadoConservacao">Estado de conservação</label>
-          <select id="estadoConservacao" name="estadoConservacao" class="form-control">
+          <label for="estado_de_conservacao">Estado de conservação</label>
+          <select id="estado_de_conservacao" name="estado_de_conservacao" class="form-control">
             <option selected>Selecione...</option>
             <option value="otimo">Ótimo</option>
             <option value="bom">Bom</option>
@@ -198,8 +213,8 @@
 
       <div class="form-row">
         <div class="form-group col-md-4">
-          <label for="papiloscopiaNoLocal">Papiloscopia no local</label>
-          <select id="papiloscopiaNoLocal" name="papiloscopiaNoLocal" class="form-control">
+          <label for="papiloscopia_no_local">Papiloscopia no local</label>
+          <select id="papiloscopia_no_local" name="papiloscopia_no_local" class="form-control">
             <option selected>Selecione...</option>
             <option value="sim">Sim</option>
             <option value="nao">Não</option>
@@ -207,8 +222,8 @@
           </select>
         </div>
         <div class="form-group col-md-4">
-          <label for="localViolado">Local violado</label>
-          <select id="localViolado" name="localViolado" class="form-control">
+          <label for="local_violado">Local violado</label>
+          <select id="local_violado" name="local_violado" class="form-control">
             <option selected>Selecione...</option>
             <option value="sim">Sim</option>
             <option value="nao">Não</option>
@@ -216,19 +231,19 @@
           </select>
         </div>
         <div class="form-group col-md-4">
-            <label for="proprietarioPosseiro">Propietário posseiro</label>
-            <input type="text" class="form-control" id="proprietarioPosseiro" name="proprietarioPosseiro">
+          <label for="proprietario_posseiro">Propietário posseiro</label>
+          <input type="text" class="form-control" id="proprietario_posseiro" name="proprietario_posseiro">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-8">
-            <label for="endereco">Endereço</label>
-            <input type="number" class="form-control" id="endereco" name="endereco">
+          <label for="endereco">Endereço</label>
+          <input type="text" class="form-control" id="endereco" name="endereco">
         </div>
         <div class="form-group col-md-4">
-            <label for="cidade">Cidade</label>
-            <input type="number" class="form-control" id="cidade" name="cidade">
+          <label for="cidade">Cidade</label>
+          <input type="text" class="form-control" id="cidade" name="cidade">
         </div>
       </div>
     </fieldset>
@@ -236,14 +251,60 @@
     <fieldset class="scheduler-border">
       <legend class="scheduler-border">III - Dos Exames</legend>
       <div class="form-group">
-          <textarea id="exames" name="exames" rows="3" class="form-control"></textarea>
+        <textarea id="exames" name="exames" rows="3" class="form-control"></textarea>
       </div>
     </fieldset>
 
     <fieldset class="scheduler-border">
       <legend class="scheduler-border">IV - Conclusão</legend>
       <div class="form-group">
-          <textarea id="conclusao" name="conclusao" rows="3" class="form-control"></textarea>
+        <textarea id="conclusao" name="conclusao" rows="3" class="form-control"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset class="scheduler-border">
+      <legend class="scheduler-border">V - Fotos do laudo</legend>
+      <div class="form-row">
+        <div class="form-group col-md-7">
+          <label for="foto_1">Foto 1</label>
+          <input type="file" class="form-control" id="foto_1" name="foto_1">
+          <textarea id="comentario_1" name="comentario_1" rows="2" placeholder="escreva aqui comentários sobre a 1ª foto selecionada..." class="form-control mt-2"></textarea>
+        </div>
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+        </div>
+      </div>
+
+      <div class="form-row d-none" id="campos-foto2">
+        <div class="form-group col-md-7" id="campos-foto2">
+          <label for="foto_2">Foto 2</label>
+          <input type="file" class="form-control" id="foto_2" name="foto_2">
+          <textarea id="comentario_2" name="comentario_2" rows="2" placeholder="escreva aqui comentários sobre a 2ª foto selecionada..." class="form-control mt-2"></textarea>
+        </div>
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+        </div>
+      </div>
+
+      <div class="form-row d-none" id="campos-foto3">
+        <div class="form-group col-md-7">
+          <label for="foto_3">Foto 3</label>
+          <input type="file" class="form-control" id="foto_3" name="foto_3">
+          <textarea id="comentario_3" name="comentario_3" rows="2" placeholder="escreva aqui comentários sobre a 3ª foto selecionada..." class="form-control mt-2"></textarea>
+        </div>
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+        </div>
+      </div>
+      <div class="form-row d-none" id="campos-foto4">
+        <div class="form-group col-md-7">
+          <label for="foto_4">Foto 4</label>
+          <input type="file" class="form-control" id="foto_4" name="foto_4">
+          <textarea id="comentario_4" name="comentario_4" rows="2" placeholder="escreva aqui comentários sobre a 4ª foto selecionada..." class="form-control mt-2"></textarea>
+        </div>
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+        </div>
       </div>
     </fieldset>
 
@@ -253,6 +314,14 @@
 
 </div><!-- /.container -->
 
+@endsection
+
+@section('javascript')
+<script>
+  $( document ).ready(function() {
+    console.log( "Tudo ok!" );
+  });
+</script>
 @endsection
 
 @section('stylecss')
