@@ -9,74 +9,61 @@
     <fieldset class="scheduler-border">
       <legend class="scheduler-border">I - Histórico</legend>
       <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="user">Usuário</label>
-          <input type="text" class="form-control" id="user" name="user">
-        </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="numero_do_laudo">Nº do laudo</label>
           <input type="password" class="form-control" id="numero_do_laudo" name="numero_do_laudo">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="data_da_ocorrencia">Data da ocorrência</label>
           <input type="date" class="form-control" id="data_da_ocorrencia" name="data_da_ocorrencia">
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-3">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="data_do_acionamento">Data do acionamento</label>
           <input type="date" class="form-control" id="data_do_acionamento" name="data_do_acionamento">
         </div>
-        <div class="form-group col-md-3">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="hora_do_acionamento">Hora do acionamento</label>
           <input type="time" class="form-control" id="hora_do_acionamento" name="hora_do_acionamento">
         </div>
-        <div class="form-group col-md-3">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="data_da_chegada_local">Data da chegada ao local</label>
           <input type="date" class="form-control" id="data_da_chegada_local" name="data_da_chegada_local">
         </div>
-        <div class="form-group col-md-3">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="hora_da_chegada_local">Hora da chegado ao local</label>
           <input type="time" class="form-control" id="hora_da_chegada_local" name="hora_da_chegada_local">
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="perito">Perito</label>
           <input type="text" class="form-control" id="perito" name="perito">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="diretor">Diretor</label>
           <input type="text" class="form-control" id="diretor" name="diretor">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="numero_da_requisicao">Nº da requisição</label>
           <input type="text" class="form-control" id="numero_da_requisicao" name="numero_da_requisicao">
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
             <label for="numero_do_procedimento">Procedimento</label>
             <input type="text" class="form-control" id="numero_do_procedimento" name="numero_do_procedimento">
           </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="origem_da_requisicao">Origem da requisição</label>
           <input type="text" class="form-control" id="origem_da_requisicao" name="origem_da_requisicao">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="autoridade_requisitante">Autoridade requisitante</label>
           <input type="text" class="form-control" id="autoridade_requisitante" name="autoridade_requisitante">
         </div>
-      </div>
+      </div><!-- /.form-row -->
     </fieldset>
 
     <fieldset class="scheduler-border">
       <legend class="scheduler-border">II - Do Local</legend>
       <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="utilizacao">Utilização</label>
           <select id="utilizacao" name="utilizacao" class="form-control">
             <option selected>Selecione...</option>
@@ -87,45 +74,39 @@
             <option value="templo_religioso">Templo Religioso</option>
           </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
             <label for="recuo_frontal">Recuo frontal</label>
             <input type="number" class="form-control" id="recuo_frontal" name="recuo_frontal">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
             <label for="recuo_lateral_direita">Recuo lateral direta</label>
             <input type="number" class="form-control" id="recuo_lateral_direita" name="recuo_lateral_direita">
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
             <label for="recuo_lateral_esquerda">Recuo lateral esquerda</label>
             <input type="number" class="form-control" id="recuo_lateral_esquerda" name="recuo_lateral_esquerda">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
             <label for="recuo_fundos">Recuo fundos</label>
             <input type="number" class="form-control" id="recuo_fundos" name="recuo_fundos">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
             <label for="area_do_imovel">Área do imóvel</label>
             <input type="number" class="form-control" id="area_do_imovel" name="area_do_imovel">
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
             <label for="area_construida">Área construída</label>
             <input type="number" class="form-control" id="area_construida" name="area_construida">
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-lg-2 col-md-6">
             <label for="numero_de_pavimentos">Nº de pavimentos</label>
             <input type="number" class="form-control" id="numero_de_pavimentos" name="numero_de_pavimentos">
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-lg-2 col-md-6">
             <label for="numero_de_compartimentos">Nº de compartimentos</label>
             <input type="number" class="form-control" id="numero_de_compartimentos" name="numero_de_compartimentos">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="tipo_de_construcao">Tipo de construção</label>
           <select id="tipo_de_construcao" name="tipo_de_construcao" class="form-control">
             <option selected>Selecione...</option>
@@ -136,10 +117,7 @@
             <option value="material_pre_fabricado">Material pré-fabricado</option>
           </select>
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="piso">Piso</label>
           <select id="piso" name="piso" class="form-control">
             <option selected>Selecione...</option>
@@ -150,7 +128,7 @@
             <option value="chao_batido">Chão batido</option>
           </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="cobertura">Cobertura</label>
           <select id="cobertura" name="cobertura" class="form-control">
             <option selected>Selecione...</option>
@@ -162,7 +140,7 @@
             <option value="ausente">Ausente</option>
           </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="forro">Forro</label>
           <select id="forro" name="forro" class="form-control">
             <option selected>Selecione...</option>
@@ -173,10 +151,7 @@
             <option value="ausente">Ausente</option>
           </select>
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="esquadrias">Esquadrinas</label>
           <select id="esquadrias" name="esquadrias" class="form-control">
             <option selected>Selecione...</option>
@@ -187,7 +162,7 @@
             <option value="blindex">Blindex</option>
           </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="classificacao">Classificação</label>
           <select id="classificacao" name="classificacao" class="form-control">
             <option selected>Selecione...</option>
@@ -199,7 +174,7 @@
             <option value="barraco">Barraco</option>
           </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="estado_de_conservacao">Estado de conservação</label>
           <select id="estado_de_conservacao" name="estado_de_conservacao" class="form-control">
             <option selected>Selecione...</option>
@@ -209,10 +184,7 @@
             <option value="pessimo">Péssimo</option>
           </select>
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="papiloscopia_no_local">Papiloscopia no local</label>
           <select id="papiloscopia_no_local" name="papiloscopia_no_local" class="form-control">
             <option selected>Selecione...</option>
@@ -221,7 +193,7 @@
             <option value="nao_sabe_informar">Não sabe informar</option>
           </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="local_violado">Local violado</label>
           <select id="local_violado" name="local_violado" class="form-control">
             <option selected>Selecione...</option>
@@ -230,22 +202,19 @@
             <option value="nao_sabe_informar">Não sabe informar</option>
           </select>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="proprietario_posseiro">Propietário posseiro</label>
           <input type="text" class="form-control" id="proprietario_posseiro" name="proprietario_posseiro">
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-8">
-          <label for="endereco">Endereço</label>
-          <input type="text" class="form-control" id="endereco" name="endereco">
-        </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-lg-4 col-md-6">
           <label for="cidade">Cidade</label>
           <input type="text" class="form-control" id="cidade" name="cidade">
         </div>
-      </div>
+        <div class="form-group col-lg-8 col-md-12">
+          <label for="endereco">Endereço</label>
+          <input type="text" class="form-control" id="endereco" name="endereco">
+        </div>
+      </div><!-- /.form-row -->
     </fieldset>
 
     <fieldset class="scheduler-border">
