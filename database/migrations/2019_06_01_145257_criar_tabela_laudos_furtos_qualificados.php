@@ -48,7 +48,7 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
                 'ceramica', 'porcelanato', 'taco', 'cimento', 'chao_batido'
             ]);
             $table->enum('cobertura', [
-                'telha_de_barro', 'firocimento', 'concreto', 'madeira', 'zinco', 'ausente'
+                'telha_de_barro', 'fibrocimento', 'concreto', 'madeira', 'zinco', 'ausente'
             ]);
             $table->enum('forro', [
                 'concreto', 'tabique', 'pvc', 'gesso', 'ausente'

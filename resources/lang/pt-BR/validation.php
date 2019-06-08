@@ -177,6 +177,21 @@ return [
         'email'                 => 'e-mail',
         'remember'              => 'lembrar-se de mim',
 
-        'data_da_ocorrencia'    => 'data da ocorrência'
+
+
+        'numero_do_laudo'       => 'número do laudo',
+        'data_da_ocorrencia'    => 'data da ocorrência',
+        'numero_da_requisicao'  => 'número da requisição',
+        'numero_do_procedimento'=> 'número do procedimento',
+        'origem_da_requisicao'  => 'origem da requisição',
+        'utilizacao'            => 'utilização',
+        'area_do_imovel'        => 'área do imóvel',
+        'area_construida'        => 'área construída',
+        'numero_de_pavimentos'  => 'nº de pavimentos',
+        'numero_de_compartimentos'  => 'nº de compartimentos',
+        'tipo_de_construcao'    => 'tipo de construção',
+        'classificacao'         => 'classificação',
+        'estado_de_conservacao' => 'estado de conservação',
+        'conclusao' => 'conclusão',
     ],
 ];

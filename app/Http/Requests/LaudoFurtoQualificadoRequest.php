@@ -55,9 +55,9 @@ class LaudoFurtoQualificadoRequest extends FormRequest
             'estado_de_conservacao' => 'required', Rule::in(['otimo', 'bom', 'regular', 'pessimo']),
             'papiloscopia_no_local' => 'required', Rule::in(['sim', 'nao', 'nao_sabe_informar']),
             'local_violado' => 'required', Rule::in(['sim', 'nao', 'parcialmente_violado']),
-            'proprietario_posseiro' => 'required',
+            /*'proprietario_posseiro' => 'required',
             'endereco' => 'required',
-            'cidade' => 'required',
+            'cidade' => 'required',*/
             'exames' => 'required',
             'conclusao' => 'required',
         ];

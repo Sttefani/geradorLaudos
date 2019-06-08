@@ -102,7 +102,7 @@
       @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
-      <label for="numero_do_procedimento">Procedimento</label>
+      <label for="numero_do_procedimento">Nº do Procedimento</label>
       <input type="text" id="numero_do_procedimento" name="numero_do_procedimento" value="{{ old('numero_do_procedimento') }}"
         class="form-control @error('numero_do_procedimento') is-invalid @enderror"
       >
@@ -143,12 +143,12 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="utilizacao">Utilização</label>
       <select id="utilizacao" name="utilizacao" class="form-control @error('utilizacao') is-invalid @enderror">
-        <option selected>Selecione...</option>
-        <option value="residencia" {{isset($laudo) && $laudo->utilizacao === 'residencia' || old('residencia') === 'residencia' ? 'selected' : ''}}>Residência</option>
-        <option value="escritorio" {{isset($laudo) && $laudo->utilizacao === 'escritorio' || old('escritorio') === 'escritorio' ? 'selected' : ''}}>Escritório</option>
-        <option value="comercio" {{isset($laudo) && $laudo->utilizacao === 'comercio' || old('comercio') === 'comercio' ? 'selected' : ''}}>Comércio</option>
-        <option value="armazem" {{isset($laudo) && $laudo->utilizacao === 'armazem' || old('armazem') === 'armazem' ? 'selected' : ''}}>Armazém</option>
-        <option value="templo_religioso" {{isset($laudo) && $laudo->utilizacao === 'templo_religioso' || old('templo_religioso') === 'templo_religioso' ? 'selected' : ''}}>Templo Religioso</option>
+        <option value="">Selecione...</option>
+        <option value="residencia" {{isset($laudo) && $laudo->utilizacao === 'residencia' || old('utilizacao') === 'residencia' ? 'selected' : ''}}>Residência</option>
+        <option value="escritorio" {{isset($laudo) && $laudo->utilizacao === 'escritorio' || old('utilizacao') === 'escritorio' ? 'selected' : ''}}>Escritório</option>
+        <option value="comercio" {{isset($laudo) && $laudo->utilizacao === 'comercio' || old('utilizacao') === 'comercio' ? 'selected' : ''}}>Comércio</option>
+        <option value="armazem" {{isset($laudo) && $laudo->utilizacao === 'armazem' || old('utilizacao') === 'armazem' ? 'selected' : ''}}>Armazém</option>
+        <option value="templo_religioso" {{isset($laudo) && $laudo->utilizacao === 'templo_religioso' || old('utilizacao') === 'templo_religioso' ? 'selected' : ''}}>Templo Religioso</option>
       </select>
       @error('utilizacao')
         <span class="invalid-feedback" role="alert">
@@ -195,124 +195,197 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="area_do_imovel">Área do imóvel</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="area_do_imovel" name="area_do_imovel">
+        <input type="number" id="area_do_imovel" name="area_do_imovel" value="{{ old('area_do_imovel') }}"
+          class="form-control @error('area_do_imovel') is-invalid @enderror"
+        >
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
         </div>
+        @error('area_do_imovel')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
       </div>
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="area_construida">Área construída</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="area_construida" name="area_construida">
+        <input type="number" id="area_construida" name="area_construida" value="{{ old('area_construida') }}"
+          class="form-control @error('area_do_imovel') is-invalid @enderror"
+        >
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
         </div>
+        @error('area_construida')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
       </div>
     </div>
     <div class="form-group col-lg-2 col-md-6">
       <label for="numero_de_pavimentos">Nº de pavimentos</label>
-      <input type="number" class="form-control" id="numero_de_pavimentos" name="numero_de_pavimentos">
+      <input type="number" id="numero_de_pavimentos" name="numero_de_pavimentos" value="{{ old('numero_de_pavimentos') }}"
+        class="form-control @error('numero_de_pavimentos') is-invalid @enderror"
+      >
+      @error('numero_de_pavimentos')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-2 col-md-6">
       <label for="numero_de_compartimentos">Nº de compartimentos</label>
-      <input type="number" class="form-control" id="numero_de_compartimentos" name="numero_de_compartimentos">
+      <input type="number" id="numero_de_compartimentos" name="numero_de_compartimentos" value="{{ old('numero_de_compartimentos') }}"
+        class="form-control @error('numero_de_compartimentos') is-invalid @enderror"
+      >
+      @error('numero_de_compartimentos')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="tipo_de_construcao">Tipo de construção</label>
-      <select id="tipo_de_construcao" name="tipo_de_construcao" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="concreto">Concreto</option>
-        <option value="alvenaria_bom_acabamento">Alvenaria bom acabamento</option>
-        <option value="alvenaria_mau_acabamento">Alvenaria mau acabamento</option>
-        <option value="madeira">Madeira</option>
-        <option value="material_pre_fabricado">Material pré-fabricado</option>
+      <select id="tipo_de_construcao" name="tipo_de_construcao" class="form-control @error('tipo_de_construcao') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="concreto" {{isset($laudo) && $laudo->tipo_de_construcao === 'concreto' || old('tipo_de_construcao') === 'concreto' ? 'selected' : ''}}>Concreto</option>
+        <option value="alvenaria_bom_acabamento" {{isset($laudo) && $laudo->alvenaria_bom_acabamento === 'concreto' || old('tipo_de_construcao') === 'alvenaria_bom_acabamento' ? 'selected' : ''}}>Alvenaria bom acabamento</option>
+        <option value="alvenaria_mau_acabamento" {{isset($laudo) && $laudo->alvenaria_mau_acabamento === 'concreto' || old('tipo_de_construcao') === 'alvenaria_mau_acabamento' ? 'selected' : ''}}>Alvenaria mau acabamento</option>
+        <option value="madeira" {{isset($laudo) && $laudo->madeira === 'concreto' || old('tipo_de_construcao') === 'madeira' ? 'selected' : ''}}>Madeira</option>
+        <option value="material_pre_fabricado" {{isset($laudo) && $laudo->material_pre_fabricado === 'concreto' || old('tipo_de_construcao') === 'material_pre_fabricado' ? 'selected' : ''}}>Material pré-fabricado</option>
       </select>
+      @error('tipo_de_construcao')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="piso">Piso</label>
-      <select id="piso" name="piso" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="ceramica">Cerâmica</option>
-        <option value="porcelanato">Porcelanato</option>
-        <option value="taco">Taco</option>
-        <option value="cimento">Cimento</option>
-        <option value="chao_batido">Chão batido</option>
+      <select id="piso" name="piso" class="form-control @error('piso') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="ceramica" {{isset($laudo) && $laudo->piso === 'ceramica' || old('piso') === 'ceramica' ? 'selected' : ''}}>Cerâmica</option>
+        <option value="porcelanato" {{isset($laudo) && $laudo->piso === 'porcelanato' || old('piso') === 'porcelanato' ? 'selected' : ''}}>Porcelanato</option>
+        <option value="taco" {{isset($laudo) && $laudo->piso === 'taco' || old('piso') === 'taco' ? 'selected' : ''}}>Taco</option>
+        <option value="cimento" {{isset($laudo) && $laudo->piso === 'cimento' || old('piso') === 'cimento' ? 'selected' : ''}}>Cimento</option>
+        <option value="chao_batido" {{isset($laudo) && $laudo->piso === 'chao_batido' || old('piso') === 'chao_batido' ? 'selected' : ''}}>Chão batido</option>
       </select>
+      @error('piso')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="cobertura">Cobertura</label>
-      <select id="cobertura" name="cobertura" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="telha_de_barro">Telha de barro</option>
-        <option value="fibrocimento">Firocimento</option>
-        <option value="concreto">Concreto</option>
-        <option value="madeira">Madeira</option>
-        <option value="zinco">Zinco</option>
-        <option value="ausente">Ausente</option>
+      <select id="cobertura" name="cobertura" class="form-control @error('cobertura') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="telha_de_barro" {{isset($laudo) && $laudo->cobertura === 'telha_de_barro' || old('cobertura') === 'telha_de_barro' ? 'selected' : ''}}>Telha de barro</option>
+        <option value="fibrocimento" {{isset($laudo) && $laudo->cobertura === 'fibrocimento' || old('cobertura') === 'fibrocimento' ? 'selected' : ''}}>Fibrocimento</option>
+        <option value="concreto" {{isset($laudo) && $laudo->cobertura === 'concreto' || old('cobertura') === 'concreto' ? 'selected' : ''}}>Concreto</option>
+        <option value="madeira" {{isset($laudo) && $laudo->cobertura === 'madeira' || old('cobertura') === 'madeira' ? 'selected' : ''}}>Madeira</option>
+        <option value="zinco" {{isset($laudo) && $laudo->cobertura === 'zinco' || old('cobertura') === 'zinco' ? 'selected' : ''}}>Zinco</option>
+        <option value="ausente" {{isset($laudo) && $laudo->cobertura === 'ausente' || old('cobertura') === 'ausente' ? 'selected' : ''}}>Ausente</option>
       </select>
+      @error('cobertura')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="forro">Forro</label>
-      <select id="forro" name="forro" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="concreto">Concreto</option>
-        <option value="tabique">Tabique</option>
-        <option value="pvc">PVC</option>
-        <option value="gesso">Gesso</option>
-        <option value="ausente">Ausente</option>
+      <select id="forro" name="forro" class="form-control @error('forro') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="concreto" {{isset($laudo) && $laudo->forro === 'concreto' || old('forro') === 'concreto' ? 'selected' : ''}}>Concreto</option>
+        <option value="tabique" {{isset($laudo) && $laudo->forro === 'tabique' || old('forro') === 'tabique' ? 'selected' : ''}}>Tabique</option>
+        <option value="pvc" {{isset($laudo) && $laudo->forro === 'pvc' || old('forro') === 'pvc' ? 'selected' : ''}}>PVC</option>
+        <option value="gesso" {{isset($laudo) && $laudo->forro === 'gesso' || old('forro') === 'gesso' ? 'selected' : ''}}>Gesso</option>
+        <option value="ausente" {{isset($laudo) && $laudo->forro === 'ausente' || old('forro') === 'ausente' ? 'selected' : ''}}>Ausente</option>
       </select>
+      @error('forro')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="esquadrias">Esquadrinas</label>
-      <select id="esquadrias" name="esquadrias" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="aluminio">Alumínio</option>
-        <option value="madeira">Madeira</option>
-        <option value="ferro">Ferro</option>
-        <option value="chapeada">Chapeada</option>
-        <option value="blindex">Blindex</option>
+      <select id="esquadrias" name="esquadrias" class="form-control @error('esquadrias') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="aluminio" {{isset($laudo) && $laudo->esquadrias === 'concreto' || old('esquadrias') === 'concreto' ? 'selected' : ''}}>Alumínio</option>
+        <option value="madeira" {{isset($laudo) && $laudo->esquadrias === 'madeira' || old('esquadrias') === 'madeira' ? 'selected' : ''}}>Madeira</option>
+        <option value="ferro" {{isset($laudo) && $laudo->esquadrias === 'ferro' || old('esquadrias') === 'ferro' ? 'selected' : ''}}>Ferro</option>
+        <option value="chapeada" {{isset($laudo) && $laudo->esquadrias === 'chapeada' || old('esquadrias') === 'chapeada' ? 'selected' : ''}}>Chapeada</option>
+        <option value="blindex" {{isset($laudo) && $laudo->esquadrias === 'blindex' || old('esquadrias') === 'blindex' ? 'selected' : ''}}>Blindex</option>
       </select>
+      @error('esquadrias')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="classificacao">Classificação</label>
-      <select id="classificacao" name="classificacao" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="luxo">Luxo</option>
-        <option value="fina">Fina</option>
-        <option value="media">Média</option>
-        <option value="modesta">Modesta</option>
-        <option value="popular">Popular</option>
-        <option value="barraco">Barraco</option>
+      <select id="classificacao" name="classificacao" class="form-control @error('classificacao') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="luxo" {{isset($laudo) && $laudo->classificacao === 'luxo' || old('classificacao') === 'luxo' ? 'selected' : ''}}>Luxo</option>
+        <option value="fina" {{isset($laudo) && $laudo->classificacao === 'fina' || old('classificacao') === 'fina' ? 'selected' : ''}}>Fina</option>
+        <option value="media" {{isset($laudo) && $laudo->classificacao === 'media' || old('classificacao') === 'media' ? 'selected' : ''}}>Média</option>
+        <option value="modesta" {{isset($laudo) && $laudo->classificacao === 'modesta' || old('classificacao') === 'modesta' ? 'selected' : ''}}>Modesta</option>
+        <option value="popular" {{isset($laudo) && $laudo->classificacao === 'popular' || old('classificacao') === 'popular' ? 'selected' : ''}}>Popular</option>
+        <option value="barraco" {{isset($laudo) && $laudo->classificacao === 'barraco' || old('classificacao') === 'barraco' ? 'selected' : ''}}>Barraco</option>
       </select>
+      @error('classificacao')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="estado_de_conservacao">Estado de conservação</label>
-      <select id="estado_de_conservacao" name="estado_de_conservacao" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="otimo">Ótimo</option>
-        <option value="bom">Bom</option>
-        <option value="regular">Regular</option>
-        <option value="pessimo">Péssimo</option>
+      <select id="estado_de_conservacao" name="estado_de_conservacao" class="form-control @error('estado_de_conservacao') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="otimo" {{isset($laudo) && $laudo->estado_de_conservacao === 'otimo' || old('estado_de_conservacao') === 'otimo' ? 'selected' : ''}}>Ótimo</option>
+        <option value="bom" {{isset($laudo) && $laudo->estado_de_conservacao === 'bom' || old('estado_de_conservacao') === 'bom' ? 'selected' : ''}}>Bom</option>
+        <option value="regular" {{isset($laudo) && $laudo->estado_de_conservacao === 'regular' || old('estado_de_conservacao') === 'regular' ? 'selected' : ''}}>Regular</option>
+        <option value="pessimo" {{isset($laudo) && $laudo->estado_de_conservacao === 'pessimo' || old('estado_de_conservacao') === 'pessimo' ? 'selected' : ''}}>Péssimo</option>
       </select>
+      @error('estado_de_conservacao')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="papiloscopia_no_local">Papiloscopia no local</label>
-      <select id="papiloscopia_no_local" name="papiloscopia_no_local" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="sim">Sim</option>
-        <option value="nao">Não</option>
-        <option value="nao_sabe_informar">Não sabe informar</option>
+      <select id="papiloscopia_no_local" name="papiloscopia_no_local" class="form-control @error('papiloscopia_no_local') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="sim" {{isset($laudo) && $laudo->papiloscopia_no_local === 'sim' || old('papiloscopia_no_local') === 'sim' ? 'selected' : ''}}>Sim</option>
+        <option value="nao" {{isset($laudo) && $laudo->papiloscopia_no_local === 'nao' || old('papiloscopia_no_local') === 'nao' ? 'selected' : ''}}>Não</option>
+        <option value="nao_sabe_informar" {{isset($laudo) && $laudo->papiloscopia_no_local === 'nao_sabe_informar' || old('papiloscopia_no_local') === 'nao_sabe_informar' ? 'selected' : ''}}>Não sabe informar</option>
       </select>
+      @error('papiloscopia_no_local')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="local_violado">Local violado</label>
-      <select id="local_violado" name="local_violado" class="form-control">
-        <option selected>Selecione...</option>
-        <option value="sim">Sim</option>
-        <option value="nao">Não</option>
-        <option value="nao_sabe_informar">Não sabe informar</option>
+      <select id="local_violado" name="local_violado" class="form-control @error('local_violado') is-invalid @enderror">
+        <option value="">Selecione...</option>
+        <option value="sim" {{isset($laudo) && $laudo->local_violado === 'sim' || old('local_violado') === 'sim' ? 'selected' : ''}}>Sim</option>
+        <option value="nao" {{isset($laudo) && $laudo->local_violado === 'nao' || old('local_violado') === 'nao' ? 'selected' : ''}}>Não</option>
+        <option value="nao_sabe_informar" {{isset($laudo) && $laudo->local_violado === 'nao_sabe_informar' || old('local_violado') === 'nao_sabe_informar' ? 'selected' : ''}}>Não sabe informar</option>
       </select>
+      @error('local_violado')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="proprietario_posseiro">Propietário posseiro</label>
@@ -332,14 +405,24 @@
 <fieldset class="scheduler-border">
   <legend class="scheduler-border">III - Dos Exames</legend>
   <div class="form-group">
-    <textarea id="exames" name="exames" rows="3" class="form-control"></textarea>
+    <textarea id="exames" name="exames" rows="3" class="form-control @error('exames') is-invalid @enderror"></textarea>
+    @error('exames')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+    @enderror
   </div>
 </fieldset>
 
 <fieldset class="scheduler-border">
   <legend class="scheduler-border">IV - Conclusão</legend>
   <div class="form-group">
-    <textarea id="conclusao" name="conclusao" rows="3" class="form-control"></textarea>
+    <textarea id="conclusao" name="conclusao" rows="3" class="form-control @error('conclusao') is-invalid @enderror"></textarea>
+    @error('conclusao')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+    @enderror
   </div>
 </fieldset>
 
