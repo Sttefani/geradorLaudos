@@ -20,4 +20,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/laudoFurtoQualificado/create', 'LaudoFurtoQualificadoController@create')
-    ->name('laudoFurtoQualificadoCreate');
+    ->name('laudoFurtoQualificado.create');
+Route::post('/laudoFurtoQualificado/store', 'LaudoFurtoQualificadoController@store')
+    ->name('laudoFurtoQualificado.store');

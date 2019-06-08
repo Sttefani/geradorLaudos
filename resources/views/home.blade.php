@@ -11,7 +11,7 @@
             <h5 class="card-title">Laudo Furto Qualificado</h5>
             <p class="cart=text">Preencha as tabelas requeridas para geração do laudo.</p>
             <br>
-            <a href="{{ route('laudoFurtoQualificadoCreate') }}" class=" btn btn-primary">Cadastre os dados</a>
+            <a href="{{ route('laudoFurtoQualificado.create') }}" class=" btn btn-primary">Cadastre os dados</a>
           </div>
         </div>
         <div class="card border boder-primary">

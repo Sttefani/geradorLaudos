@@ -1,0 +1,425 @@
+{!! csrf_field() !!}
+<fieldset class="scheduler-border">
+  <legend class="scheduler-border">I - Histórico</legend>
+  <div class="form-row">
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="numero_do_laudo">Nº do laudo</label>
+      <input type="text" id="numero_do_laudo" name="numero_do_laudo" value="{{ old('numero_do_laudo') }}"
+        class="form-control @error('numero_do_laudo') is-invalid @enderror"
+      >
+      @error('numero_do_laudo')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="data_da_ocorrencia">Data da ocorrência</label>
+      <input type="date" id="data_da_ocorrencia" name="data_da_ocorrencia" value="{{ old('data_da_ocorrencia') }}"
+        class="form-control @error('data_da_ocorrencia') is-invalid @enderror"
+      >
+      @error('data_da_ocorrencia')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="data_do_acionamento">Data do acionamento</label>
+      <input type="date" id="data_do_acionamento" name="data_do_acionamento" value="{{ old('data_do_acionamento') }}"
+        class="form-control @error('data_do_acionamento') is-invalid @enderror"
+      >
+      @error('data_do_acionamento')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="hora_do_acionamento">Hora do acionamento</label>
+      <input type="time" id="hora_do_acionamento" name="hora_do_acionamento" value="{{ old('hora_do_acionamento') }}"
+        class="form-control @error('hora_do_acionamento') is-invalid @enderror"
+      >
+      @error('hora_do_acionamento')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="data_da_chegada_local">Data da chegada ao local</label>
+      <input type="date" id="data_da_chegada_local" name="data_da_chegada_local" value="{{ old('data_da_chegada_local') }}"
+        class="form-control @error('data_da_chegada_local') is-invalid @enderror"
+      >
+      @error('data_da_chegada_local')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="hora_da_chegada_local">Hora da chegada ao local</label>
+      <input type="time" id="hora_da_chegada_local" name="hora_da_chegada_local" value="{{ old('hora_da_chegada_local') }}"
+        class="form-control @error('hora_da_chegada_local') is-invalid @enderror"
+      >
+      @error('hora_da_chegada_local')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="perito">Perito</label>
+      <input type="text" id="perito" name="perito" value="{{ old('perito') }}"
+        class="form-control @error('perito') is-invalid @enderror"
+      >
+      @error('perito')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="diretor">Diretor</label>
+      <input type="text" id="diretor" name="diretor" value="{{ old('diretor') }}"
+        class="form-control @error('diretor') is-invalid @enderror"
+      >
+      @error('diretor')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="numero_da_requisicao">Nº da requisição</label>
+      <input type="text" id="numero_da_requisicao" name="numero_da_requisicao" value="{{ old('numero_da_requisicao') }}"
+        class="form-control @error('numero_da_requisicao') is-invalid @enderror"
+      >
+      @error('numero_da_requisicao')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="numero_do_procedimento">Procedimento</label>
+      <input type="text" id="numero_do_procedimento" name="numero_do_procedimento" value="{{ old('numero_do_procedimento') }}"
+        class="form-control @error('numero_do_procedimento') is-invalid @enderror"
+      >
+      @error('numero_do_procedimento')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="origem_da_requisicao">Origem da requisição</label>
+      <input type="text" id="origem_da_requisicao" name="origem_da_requisicao" value="{{ old('origem_da_requisicao') }}"
+        class="form-control @error('origem_da_requisicao') is-invalid @enderror"
+      >
+      @error('origem_da_requisicao')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="autoridade_requisitante">Autoridade requisitante</label>
+      <input type="text" id="autoridade_requisitante" name="autoridade_requisitante" value="{{ old('autoridade_requisitante') }}"
+        class="form-control @error('autoridade_requisitante') is-invalid @enderror"
+      >
+      @error('autoridade_requisitante')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+  </div><!-- /.form-row -->
+</fieldset>
+
+<fieldset class="scheduler-border">
+  <legend class="scheduler-border">II - Do Local</legend>
+  <div class="form-row">
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="utilizacao">Utilização</label>
+      <select id="utilizacao" name="utilizacao" class="form-control @error('utilizacao') is-invalid @enderror">
+        <option selected>Selecione...</option>
+        <option value="residencia" {{isset($laudo) && $laudo->utilizacao === 'residencia' || old('residencia') === 'residencia' ? 'selected' : ''}}>Residência</option>
+        <option value="escritorio" {{isset($laudo) && $laudo->utilizacao === 'escritorio' || old('escritorio') === 'escritorio' ? 'selected' : ''}}>Escritório</option>
+        <option value="comercio" {{isset($laudo) && $laudo->utilizacao === 'comercio' || old('comercio') === 'comercio' ? 'selected' : ''}}>Comércio</option>
+        <option value="armazem" {{isset($laudo) && $laudo->utilizacao === 'armazem' || old('armazem') === 'armazem' ? 'selected' : ''}}>Armazém</option>
+        <option value="templo_religioso" {{isset($laudo) && $laudo->utilizacao === 'templo_religioso' || old('templo_religioso') === 'templo_religioso' ? 'selected' : ''}}>Templo Religioso</option>
+      </select>
+      @error('utilizacao')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="recuo_frontal">Recuo frontal</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="recuo_frontal" name="recuo_frontal">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">m</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="recuo_lateral_direita">Recuo lateral direta</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="recuo_lateral_direita" name="recuo_lateral_direita">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">m</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="recuo_lateral_esquerda">Recuo lateral esquerda</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="recuo_lateral_esquerda" name="recuo_lateral_esquerda">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">m</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="recuo_fundos">Recuo fundos</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="recuo_fundos" name="recuo_fundos">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">m</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="area_do_imovel">Área do imóvel</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="area_do_imovel" name="area_do_imovel">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="area_construida">Área construída</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="area_construida" name="area_construida">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">m<sup>2</sup></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-2 col-md-6">
+      <label for="numero_de_pavimentos">Nº de pavimentos</label>
+      <input type="number" class="form-control" id="numero_de_pavimentos" name="numero_de_pavimentos">
+    </div>
+    <div class="form-group col-lg-2 col-md-6">
+      <label for="numero_de_compartimentos">Nº de compartimentos</label>
+      <input type="number" class="form-control" id="numero_de_compartimentos" name="numero_de_compartimentos">
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="tipo_de_construcao">Tipo de construção</label>
+      <select id="tipo_de_construcao" name="tipo_de_construcao" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="concreto">Concreto</option>
+        <option value="alvenaria_bom_acabamento">Alvenaria bom acabamento</option>
+        <option value="alvenaria_mau_acabamento">Alvenaria mau acabamento</option>
+        <option value="madeira">Madeira</option>
+        <option value="material_pre_fabricado">Material pré-fabricado</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="piso">Piso</label>
+      <select id="piso" name="piso" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="ceramica">Cerâmica</option>
+        <option value="porcelanato">Porcelanato</option>
+        <option value="taco">Taco</option>
+        <option value="cimento">Cimento</option>
+        <option value="chao_batido">Chão batido</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="cobertura">Cobertura</label>
+      <select id="cobertura" name="cobertura" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="telha_de_barro">Telha de barro</option>
+        <option value="fibrocimento">Firocimento</option>
+        <option value="concreto">Concreto</option>
+        <option value="madeira">Madeira</option>
+        <option value="zinco">Zinco</option>
+        <option value="ausente">Ausente</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="forro">Forro</label>
+      <select id="forro" name="forro" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="concreto">Concreto</option>
+        <option value="tabique">Tabique</option>
+        <option value="pvc">PVC</option>
+        <option value="gesso">Gesso</option>
+        <option value="ausente">Ausente</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="esquadrias">Esquadrinas</label>
+      <select id="esquadrias" name="esquadrias" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="aluminio">Alumínio</option>
+        <option value="madeira">Madeira</option>
+        <option value="ferro">Ferro</option>
+        <option value="chapeada">Chapeada</option>
+        <option value="blindex">Blindex</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="classificacao">Classificação</label>
+      <select id="classificacao" name="classificacao" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="luxo">Luxo</option>
+        <option value="fina">Fina</option>
+        <option value="media">Média</option>
+        <option value="modesta">Modesta</option>
+        <option value="popular">Popular</option>
+        <option value="barraco">Barraco</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="estado_de_conservacao">Estado de conservação</label>
+      <select id="estado_de_conservacao" name="estado_de_conservacao" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="otimo">Ótimo</option>
+        <option value="bom">Bom</option>
+        <option value="regular">Regular</option>
+        <option value="pessimo">Péssimo</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="papiloscopia_no_local">Papiloscopia no local</label>
+      <select id="papiloscopia_no_local" name="papiloscopia_no_local" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+        <option value="nao_sabe_informar">Não sabe informar</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="local_violado">Local violado</label>
+      <select id="local_violado" name="local_violado" class="form-control">
+        <option selected>Selecione...</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+        <option value="nao_sabe_informar">Não sabe informar</option>
+      </select>
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="proprietario_posseiro">Propietário posseiro</label>
+      <input type="text" class="form-control" id="proprietario_posseiro" name="proprietario_posseiro">
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+      <label for="cidade">Cidade</label>
+      <input type="text" class="form-control" id="cidade" name="cidade">
+    </div>
+    <div class="form-group col-lg-8 col-md-12">
+      <label for="endereco">Endereço</label>
+      <input type="text" class="form-control" id="endereco" name="endereco">
+    </div>
+  </div><!-- /.form-row -->
+</fieldset>
+
+<fieldset class="scheduler-border">
+  <legend class="scheduler-border">III - Dos Exames</legend>
+  <div class="form-group">
+    <textarea id="exames" name="exames" rows="3" class="form-control"></textarea>
+  </div>
+</fieldset>
+
+<fieldset class="scheduler-border">
+  <legend class="scheduler-border">IV - Conclusão</legend>
+  <div class="form-group">
+    <textarea id="conclusao" name="conclusao" rows="3" class="form-control"></textarea>
+  </div>
+</fieldset>
+
+<fieldset class="scheduler-border">
+  <legend class="scheduler-border">V - Fotos do laudo</legend>
+  <div class="form-row">
+    <div class="form-group col-md-7">
+      <label for="foto_1">Foto 1</label>
+      <input type="file" class="form-control" id="foto_1" name="foto_1">
+      <textarea id="comentario_1" name="comentario_1" rows="2" placeholder="escreva aqui comentários sobre a 1ª foto selecionada..." class="form-control mt-2"></textarea>
+    </div>
+    <div class="col-md-5 d-flex justify-content-center align-items-center">
+      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+    </div>
+  </div>
+
+  <div class="form-row d-none" id="campos-foto2">
+    <div class="form-group col-md-7" id="campos-foto2">
+      <label for="foto_2">Foto 2</label>
+      <input type="file" class="form-control" id="foto_2" name="foto_2">
+      <textarea id="comentario_2" name="comentario_2" rows="2" placeholder="escreva aqui comentários sobre a 2ª foto selecionada..." class="form-control mt-2"></textarea>
+    </div>
+    <div class="col-md-5 d-flex justify-content-center align-items-center">
+      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+    </div>
+  </div>
+
+  <div class="form-row d-none" id="campos-foto3">
+    <div class="form-group col-md-7">
+      <label for="foto_3">Foto 3</label>
+      <input type="file" class="form-control" id="foto_3" name="foto_3">
+      <textarea id="comentario_3" name="comentario_3" rows="2" placeholder="escreva aqui comentários sobre a 3ª foto selecionada..." class="form-control mt-2"></textarea>
+    </div>
+    <div class="col-md-5 d-flex justify-content-center align-items-center">
+      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+    </div>
+  </div>
+  <div class="form-row d-none" id="campos-foto4">
+    <div class="form-group col-md-7">
+      <label for="foto_4">Foto 4</label>
+      <input type="file" class="form-control" id="foto_4" name="foto_4">
+      <textarea id="comentario_4" name="comentario_4" rows="2" placeholder="escreva aqui comentários sobre a 4ª foto selecionada..." class="form-control mt-2"></textarea>
+    </div>
+    <div class="col-md-5 d-flex justify-content-center align-items-center">
+      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+    </div>
+  </div>
+</fieldset>
+
+<a href="{{ route('home') }}" class="btn btn-light">Cancelar</a>
+<button type="submit" class="btn btn-primary">Realizar o cadastro</button>
+
+@section('javascript')
+<script>
+  $( document ).ready(function() {
+    console.log( "Tudo ok!" );
+  });
+</script>
+@endsection
+
+@section('stylecss')
+<style>
+  fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+  }
+
+  legend.scheduler-border {
+      font-size: 1.2em !important;
+      font-weight: bold !important;
+      text-align: left !important;
+  }
+
+  legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+  }
+</style>
+@endsection

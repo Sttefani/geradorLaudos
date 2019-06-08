@@ -10,9 +10,9 @@ class LaudoFurtoQualificado extends Model
     protected $table = "laudos_furtos_qualificados";
 
     protected $fillable = [
-        'user_id', 'numero_do_laudo', 'data_da_ocorrencia', 'data_hora_do_acionamento', 'data_hora_da_chegada_ao_local',
-        'perito', 'diretor', 'numero_da_requisicao', 'numero_do_procedimento', 'origem_da_requisicao',
-        'autoridade_requisitante', 'utilizacao', 'recuo_frontal', 'recuo_lateral_direita', 'recuo_lateral_esquerda',
+        'user_id', 'numero_do_laudo', 'data_da_ocorrencia', 'data_do_acionamento', 'hora_do_acionamento',
+        'data_da_chegada_local', 'hora_da_chegada_local', 'perito', 'diretor', 'numero_da_requisicao', 'numero_do_procedimento',
+        'origem_da_requisicao', 'autoridade_requisitante', 'utilizacao', 'recuo_frontal', 'recuo_lateral_direita', 'recuo_lateral_esquerda',
         'recuo_fundos', 'area_do_imovel', 'area_construida', 'numero_de_pavimentos', 'numero_de_compartimentos',
         'tipo_de_construcao', 'piso', 'cobertura', 'forro', 'esquadrias', 'classificacao', 'estado_de_conservacao',
         'papiloscopia_no_local', 'local_violado', 'proprietario_posseiro', 'endereco', 'cidade',

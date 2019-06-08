@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\LaudoFurtoQualificadoRequest;
+use App\Models\LaudoFurtoQualificado;
 
 class LaudoFurtoQualificadoController extends Controller
 {
@@ -30,9 +32,22 @@ class LaudoFurtoQualificadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LaudoFurtoQualificadoRequest $request)
     {
-        //
+        try {
+            $data = $request->all();
+            $data['user_id'] = auth()->user()->id;
+            $laudo = LaudoFurtoQualificado::create($data);
+
+            return redirect()
+                ->route('dna.index')
+                ->with($request['success'] ? 'success' : 'error', $request['message']);
+        } catch (Exception $e) {
+            return [
+                'success' => false,
+                'message' => StringsPattern::error()
+            ];
+        }
     }
 
     /**
