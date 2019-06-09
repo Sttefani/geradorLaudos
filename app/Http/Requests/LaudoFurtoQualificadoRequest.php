@@ -38,10 +38,10 @@ class LaudoFurtoQualificadoRequest extends FormRequest
             'origem_da_requisicao' => 'required',
             'autoridade_requisitante' => 'required',
             'utilizacao' => 'required', Rule::in(['residencia', 'escritorio', 'comercio', 'armazem', 'templo_religioso']),
-            'recuo_frontal' => 'required|numeric|min:1',
+            /*'recuo_frontal' => 'required|numeric|min:1',
             'recuo_lateral_direita' => 'required|numeric|min:1',
             'recuo_lateral_esquerda' => 'required|numeric|min:1',
-            'recuo_fundos' => 'required|numeric|min:1',
+            'recuo_fundos' => 'required|numeric|min:1',*/
             'area_do_imovel' => 'required|numeric|min:1',
             'area_construida' => 'required|numeric|min:1',
             'numero_de_pavimentos' => 'required|numeric',
@@ -55,9 +55,9 @@ class LaudoFurtoQualificadoRequest extends FormRequest
             'estado_de_conservacao' => 'required', Rule::in(['otimo', 'bom', 'regular', 'pessimo']),
             'papiloscopia_no_local' => 'required', Rule::in(['sim', 'nao', 'nao_sabe_informar']),
             'local_violado' => 'required', Rule::in(['sim', 'nao', 'parcialmente_violado']),
-            /*'proprietario_posseiro' => 'required',
+            /*'proprietario_posseiro' => 'required',*/
             'endereco' => 'required',
-            'cidade' => 'required',*/
+            'cidade' => 'required',
             'exames' => 'required',
             'conclusao' => 'required',
         ];

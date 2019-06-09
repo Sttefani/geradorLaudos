@@ -192,6 +192,7 @@ return [
         'tipo_de_construcao'    => 'tipo de construção',
         'classificacao'         => 'classificação',
         'estado_de_conservacao' => 'estado de conservação',
-        'conclusao' => 'conclusão',
+        'endereco'              => 'endereço',
+        'conclusao'             => 'conclusão',
     ],
 ];

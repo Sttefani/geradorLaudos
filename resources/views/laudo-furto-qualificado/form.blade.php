@@ -389,15 +389,29 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="proprietario_posseiro">Propietário posseiro</label>
-      <input type="text" class="form-control" id="proprietario_posseiro" name="proprietario_posseiro">
+      <input type="text" class="form-control" id="proprietario_posseiro" name="proprietario_posseiro" value="{{ old('proprietario_posseiro') }}">
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="cidade">Cidade</label>
-      <input type="text" class="form-control" id="cidade" name="cidade">
+      <input type="text" id="cidade" name="cidade" value="{{ old('cidade') }}"
+        class="form-control @error('cidade') is-invalid @enderror"
+      >
+      @error('cidade')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
     <div class="form-group col-lg-8 col-md-12">
       <label for="endereco">Endereço</label>
-      <input type="text" class="form-control" id="endereco" name="endereco">
+      <input type="text" id="endereco" name="endereco" value="{{ old('endereco') }}"
+        class="form-control @error('cidade') is-invalid @enderror"
+      >
+      @error('endereco')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
     </div>
   </div><!-- /.form-row -->
 </fieldset>

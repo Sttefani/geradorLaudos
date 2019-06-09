@@ -23,7 +23,7 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
             $table->date('data_do_acionamento');
             $table->time('hora_do_acionamento');
             $table->date('data_da_chegada_local');
-            $table->date('hora_da_chegada_local');
+            $table->time('hora_da_chegada_local');
             $table->string('perito');
             $table->string('diretor');
             $table->string('numero_da_requisicao');
@@ -33,10 +33,10 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
             $table->enum('utilizacao', [
                 'residencia', 'escritorio', 'comercio', 'armazem', 'templo_religioso'
             ]);
-            $table->float('recuo_frontal');
-            $table->float('recuo_lateral_direita');
-            $table->float('recuo_lateral_esquerda');
-            $table->float('recuo_fundos');
+            $table->float('recuo_frontal')->nullable();
+            $table->float('recuo_lateral_direita')->nullable();
+            $table->float('recuo_lateral_esquerda')->nullable();
+            $table->float('recuo_fundos')->nullable();
             $table->float('area_do_imovel');
             $table->float('area_construida');
             $table->integer('numero_de_pavimentos');
@@ -68,7 +68,7 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
             $table->enum('local_violado', [
                 'sim', 'nao', 'parcialmente_violado',
             ]);
-            $table->string('proprietario_posseiro');
+            $table->string('proprietario_posseiro')->nullable();
             $table->string('endereco');
             $table->string('cidade');
             $table->longText('exames');
