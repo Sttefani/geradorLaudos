@@ -32,4 +32,6 @@ Route::group(['middleware' => 'auth'], function () {
         ->name('laudoFurtoQualificado.edit');
     Route::put('/laudoFurtoQualificado/{id}', 'LaudoFurtoQualificadoController@update')
         ->name('laudoFurtoQualificado.update');
+    Route::get('/laudoFurtoQualificado/{id}/geradorpdf', 'LaudoFurtoQualificadoController@geradorpdf')
+        ->name('laudoFurtoQualificado.geradorpdf');
 });

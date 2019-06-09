@@ -4,7 +4,7 @@
   <div class="form-row">
     <div class="form-group col-lg-4 col-md-6">
       <label for="numero_do_laudo">Nº do laudo</label>
-      <input type="text" id="numero_do_laudo" name="numero_do_laudo" value="{{ isset($laudo) ? $laudo->numero_do_laudo : $laudo-> old('numero_do_laudo') }}"
+      <input type="text" id="numero_do_laudo" name="numero_do_laudo" value="{{ isset($laudo) ? $laudo->numero_do_laudo : old('numero_do_laudo') }}"
         class="form-control @error('numero_do_laudo') is-invalid @enderror"
       >
       @error('numero_do_laudo')

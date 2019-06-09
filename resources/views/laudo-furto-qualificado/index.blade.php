@@ -44,7 +44,9 @@
             <a href="{{ route('laudoFurtoQualificado.edit', $laudo->id) }}">
               <img src="{{url('imgs/edit.png')}}" alt="editar laudo">
             </a>
-            <img src="{{url('imgs/pdf.png')}}" alt="gerar pdf">
+            <a href="{{ route('laudoFurtoQualificado.geradorpdf', $laudo->id) }}">
+              <img src="{{url('imgs/pdf.png')}}" alt="gerar pdf">
+            </a>
           </td>
         </tr>
       @empty

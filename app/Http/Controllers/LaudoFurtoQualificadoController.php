@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\LaudoFurtoQualificadoRequest;
 use App\Models\LaudoFurtoQualificado;
+use PDF;
 
 class LaudoFurtoQualificadoController extends Controller
 {
@@ -152,6 +153,13 @@ class LaudoFurtoQualificadoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function geradorpdf($id)
+    {
+        $laudo = LaudoFurtoQualificado::findOrFail($id);
+        $pdf = PDF::loadView('laudo-furto-qualificado.laudoPDF', compact('laudo'));
+        return $pdf->stream();
     }
 
     private function uploadFoto($request, $nomeFoto, $laudoBuscado = null)
