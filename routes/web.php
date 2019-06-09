@@ -17,9 +17,19 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    /** abertura da home */
+    Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/laudoFurtoQualificado/create', 'LaudoFurtoQualificadoController@create')
-    ->name('laudoFurtoQualificado.create');
-Route::post('/laudoFurtoQualificado/store', 'LaudoFurtoQualificadoController@store')
-    ->name('laudoFurtoQualificado.store');
+    /** telas de laudoFurtoQualificado */
+    Route::get('/laudoFurtoQualificado', 'LaudoFurtoQualificadoController@index')
+        ->name('laudoFurtoQualificado.index');
+    Route::get('/laudoFurtoQualificado/create', 'LaudoFurtoQualificadoController@create')
+        ->name('laudoFurtoQualificado.create');
+    Route::post('/laudoFurtoQualificado/store', 'LaudoFurtoQualificadoController@store')
+        ->name('laudoFurtoQualificado.store');
+    Route::get('/laudoFurtoQualificado/{id}/edit', 'LaudoFurtoQualificadoController@edit')
+        ->name('laudoFurtoQualificado.edit');
+    Route::put('/laudoFurtoQualificado/{id}', 'LaudoFurtoQualificadoController@update')
+        ->name('laudoFurtoQualificado.update');
+});

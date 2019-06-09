@@ -4,7 +4,7 @@
   <div class="form-row">
     <div class="form-group col-lg-4 col-md-6">
       <label for="numero_do_laudo">Nº do laudo</label>
-      <input type="text" id="numero_do_laudo" name="numero_do_laudo" value="{{ old('numero_do_laudo') }}"
+      <input type="text" id="numero_do_laudo" name="numero_do_laudo" value="{{ isset($laudo) ? $laudo->numero_do_laudo : $laudo-> old('numero_do_laudo') }}"
         class="form-control @error('numero_do_laudo') is-invalid @enderror"
       >
       @error('numero_do_laudo')
@@ -15,7 +15,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="data_da_ocorrencia">Data da ocorrência</label>
-      <input type="date" id="data_da_ocorrencia" name="data_da_ocorrencia" value="{{ old('data_da_ocorrencia') }}"
+      <input type="date" id="data_da_ocorrencia" name="data_da_ocorrencia" value="{{ isset($laudo) ? $laudo->data_da_ocorrencia : old('data_da_ocorrencia') }}"
         class="form-control @error('data_da_ocorrencia') is-invalid @enderror"
       >
       @error('data_da_ocorrencia')
@@ -26,7 +26,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="data_do_acionamento">Data do acionamento</label>
-      <input type="date" id="data_do_acionamento" name="data_do_acionamento" value="{{ old('data_do_acionamento') }}"
+      <input type="date" id="data_do_acionamento" name="data_do_acionamento" value="{{ isset($laudo) ? $laudo->data_do_acionamento : old('data_do_acionamento') }}"
         class="form-control @error('data_do_acionamento') is-invalid @enderror"
       >
       @error('data_do_acionamento')
@@ -37,7 +37,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="hora_do_acionamento">Hora do acionamento</label>
-      <input type="time" id="hora_do_acionamento" name="hora_do_acionamento" value="{{ old('hora_do_acionamento') }}"
+      <input type="time" id="hora_do_acionamento" name="hora_do_acionamento" value="{{ isset($laudo) ? $laudo->hora_do_acionamento : old('hora_do_acionamento') }}"
         class="form-control @error('hora_do_acionamento') is-invalid @enderror"
       >
       @error('hora_do_acionamento')
@@ -48,7 +48,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="data_da_chegada_local">Data da chegada ao local</label>
-      <input type="date" id="data_da_chegada_local" name="data_da_chegada_local" value="{{ old('data_da_chegada_local') }}"
+      <input type="date" id="data_da_chegada_local" name="data_da_chegada_local" value="{{ isset($laudo) ? $laudo->data_da_chegada_local : old('data_da_chegada_local') }}"
         class="form-control @error('data_da_chegada_local') is-invalid @enderror"
       >
       @error('data_da_chegada_local')
@@ -59,7 +59,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="hora_da_chegada_local">Hora da chegada ao local</label>
-      <input type="time" id="hora_da_chegada_local" name="hora_da_chegada_local" value="{{ old('hora_da_chegada_local') }}"
+      <input type="time" id="hora_da_chegada_local" name="hora_da_chegada_local" value="{{ isset($laudo) ? $laudo->hora_da_chegada_local : old('hora_da_chegada_local') }}"
         class="form-control @error('hora_da_chegada_local') is-invalid @enderror"
       >
       @error('hora_da_chegada_local')
@@ -70,7 +70,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="perito">Perito</label>
-      <input type="text" id="perito" name="perito" value="{{ old('perito') }}"
+      <input type="text" id="perito" name="perito" value="{{ isset($laudo) ? $laudo->perito : old('perito') }}"
         class="form-control @error('perito') is-invalid @enderror"
       >
       @error('perito')
@@ -81,7 +81,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="diretor">Diretor</label>
-      <input type="text" id="diretor" name="diretor" value="{{ old('diretor') }}"
+      <input type="text" id="diretor" name="diretor" value="{{ isset($laudo) ? $laudo->diretor : old('diretor') }}"
         class="form-control @error('diretor') is-invalid @enderror"
       >
       @error('diretor')
@@ -92,7 +92,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="numero_da_requisicao">Nº da requisição</label>
-      <input type="text" id="numero_da_requisicao" name="numero_da_requisicao" value="{{ old('numero_da_requisicao') }}"
+      <input type="text" id="numero_da_requisicao" name="numero_da_requisicao" value="{{ isset($laudo) ? $laudo->numero_da_requisicao : old('numero_da_requisicao') }}"
         class="form-control @error('numero_da_requisicao') is-invalid @enderror"
       >
       @error('numero_da_requisicao')
@@ -103,7 +103,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="numero_do_procedimento">Nº do Procedimento</label>
-      <input type="text" id="numero_do_procedimento" name="numero_do_procedimento" value="{{ old('numero_do_procedimento') }}"
+      <input type="text" id="numero_do_procedimento" name="numero_do_procedimento" value="{{ isset($laudo) ? $laudo->numero_do_procedimento : old('numero_do_procedimento') }}"
         class="form-control @error('numero_do_procedimento') is-invalid @enderror"
       >
       @error('numero_do_procedimento')
@@ -114,7 +114,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="origem_da_requisicao">Origem da requisição</label>
-      <input type="text" id="origem_da_requisicao" name="origem_da_requisicao" value="{{ old('origem_da_requisicao') }}"
+      <input type="text" id="origem_da_requisicao" name="origem_da_requisicao" value="{{ isset($laudo) ? $laudo->origem_da_requisicao : old('origem_da_requisicao') }}"
         class="form-control @error('origem_da_requisicao') is-invalid @enderror"
       >
       @error('origem_da_requisicao')
@@ -125,7 +125,7 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="autoridade_requisitante">Autoridade requisitante</label>
-      <input type="text" id="autoridade_requisitante" name="autoridade_requisitante" value="{{ old('autoridade_requisitante') }}"
+      <input type="text" id="autoridade_requisitante" name="autoridade_requisitante" value="{{ isset($laudo) ? $laudo->autoridade_requisitante : old('autoridade_requisitante') }}"
         class="form-control @error('autoridade_requisitante') is-invalid @enderror"
       >
       @error('autoridade_requisitante')
@@ -159,7 +159,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_frontal">Recuo frontal</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_frontal" name="recuo_frontal">
+        <input type="number" class="form-control" id="recuo_frontal" name="recuo_frontal" value="{{ isset($laudo) ? $laudo->recuo_frontal : old('recuo_frontal') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -168,7 +168,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_lateral_direita">Recuo lateral direta</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_lateral_direita" name="recuo_lateral_direita">
+        <input type="number" class="form-control" id="recuo_lateral_direita" name="recuo_lateral_direita" value="{{ isset($laudo) ? $laudo->recuo_lateral_direita : old('recuo_lateral_direita') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -177,7 +177,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_lateral_esquerda">Recuo lateral esquerda</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_lateral_esquerda" name="recuo_lateral_esquerda">
+        <input type="number" class="form-control" id="recuo_lateral_esquerda" name="recuo_lateral_esquerda" value="{{ isset($laudo) ? $laudo->recuo_lateral_esquerda : old('recuo_lateral_esquerda') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -186,7 +186,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_fundos">Recuo fundos</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_fundos" name="recuo_fundos">
+        <input type="number" class="form-control" id="recuo_fundos" name="recuo_fundos" value="{{ isset($laudo) ? $laudo->recuo_fundos : old('recuo_fundos') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -195,7 +195,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="area_do_imovel">Área do imóvel</label>
       <div class="input-group">
-        <input type="number" id="area_do_imovel" name="area_do_imovel" value="{{ old('area_do_imovel') }}"
+        <input type="number" id="area_do_imovel" name="area_do_imovel" value="{{ isset($laudo) ? $laudo->area_do_imovel : old('area_do_imovel') }}"
           class="form-control @error('area_do_imovel') is-invalid @enderror"
         >
         <div class="input-group-append">
@@ -211,7 +211,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="area_construida">Área construída</label>
       <div class="input-group">
-        <input type="number" id="area_construida" name="area_construida" value="{{ old('area_construida') }}"
+        <input type="number" id="area_construida" name="area_construida" value="{{ isset($laudo) ? $laudo->area_construida : old('area_construida') }}"
           class="form-control @error('area_do_imovel') is-invalid @enderror"
         >
         <div class="input-group-append">
@@ -226,7 +226,7 @@
     </div>
     <div class="form-group col-lg-2 col-md-6">
       <label for="numero_de_pavimentos">Nº de pavimentos</label>
-      <input type="number" id="numero_de_pavimentos" name="numero_de_pavimentos" value="{{ old('numero_de_pavimentos') }}"
+      <input type="number" id="numero_de_pavimentos" name="numero_de_pavimentos" value="{{ isset($laudo) ? $laudo->numero_de_pavimentos : old('numero_de_pavimentos') }}"
         class="form-control @error('numero_de_pavimentos') is-invalid @enderror"
       >
       @error('numero_de_pavimentos')
@@ -237,7 +237,7 @@
     </div>
     <div class="form-group col-lg-2 col-md-6">
       <label for="numero_de_compartimentos">Nº de compartimentos</label>
-      <input type="number" id="numero_de_compartimentos" name="numero_de_compartimentos" value="{{ old('numero_de_compartimentos') }}"
+      <input type="number" id="numero_de_compartimentos" name="numero_de_compartimentos" value="{{ isset($laudo) ? $laudo->numero_de_compartimentos : old('numero_de_compartimentos') }}"
         class="form-control @error('numero_de_compartimentos') is-invalid @enderror"
       >
       @error('numero_de_compartimentos')
@@ -389,11 +389,11 @@
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="proprietario_posseiro">Propietário posseiro</label>
-      <input type="text" class="form-control" id="proprietario_posseiro" name="proprietario_posseiro" value="{{ old('proprietario_posseiro') }}">
+      <input type="text" class="form-control" id="proprietario_posseiro" name="proprietario_posseiro" value="{{ isset($laudo) ? $laudo->proprietario_posseiro : old('proprietario_posseiro') }}">
     </div>
     <div class="form-group col-lg-4 col-md-6">
       <label for="cidade">Cidade</label>
-      <input type="text" id="cidade" name="cidade" value="{{ old('cidade') }}"
+      <input type="text" id="cidade" name="cidade" value="{{ isset($laudo) ? $laudo->cidade : old('cidade') }}"
         class="form-control @error('cidade') is-invalid @enderror"
       >
       @error('cidade')
@@ -404,7 +404,7 @@
     </div>
     <div class="form-group col-lg-8 col-md-12">
       <label for="endereco">Endereço</label>
-      <input type="text" id="endereco" name="endereco" value="{{ old('endereco') }}"
+      <input type="text" id="endereco" name="endereco" value="{{ isset($laudo) ? $laudo->endereco : old('endereco') }}"
         class="form-control @error('cidade') is-invalid @enderror"
       >
       @error('endereco')
@@ -419,7 +419,7 @@
 <fieldset class="scheduler-border">
   <legend class="scheduler-border">III - Dos Exames</legend>
   <div class="form-group">
-    <textarea id="exames" name="exames" rows="3" class="form-control @error('exames') is-invalid @enderror"></textarea>
+    <textarea id="exames" name="exames" rows="3" class="form-control @error('exames') is-invalid @enderror">{{ isset($laudo) ? $laudo->exames : old('exames') }}</textarea>
     @error('exames')
       <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
@@ -431,7 +431,7 @@
 <fieldset class="scheduler-border">
   <legend class="scheduler-border">IV - Conclusão</legend>
   <div class="form-group">
-    <textarea id="conclusao" name="conclusao" rows="3" class="form-control @error('conclusao') is-invalid @enderror"></textarea>
+    <textarea id="conclusao" name="conclusao" rows="3" class="form-control @error('conclusao') is-invalid @enderror">{{ isset($laudo) ? $laudo->conclusao : old('conclusao') }}</textarea>
     @error('conclusao')
       <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
@@ -446,10 +446,14 @@
     <div class="form-group col-md-7">
       <label for="foto_1">Foto 1</label>
       <input type="file" class="form-control" id="foto_1" name="foto_1">
-      <textarea id="comentario_1" name="comentario_1" rows="2" placeholder="escreva aqui comentários sobre a 1ª foto selecionada..." class="form-control mt-2"></textarea>
+      <textarea id="comentario_1" name="comentario_1" rows="2" placeholder="escreva aqui comentários sobre a 1ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_1 : old('comentario_1') }}</textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
-      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+      @if (isset($laudo->foto_1))
+        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="130" alt="foto 1 do laudo" />
+      @else
+        <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+      @endif
     </div>
   </div>
 

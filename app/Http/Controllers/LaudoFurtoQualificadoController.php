@@ -15,7 +15,9 @@ class LaudoFurtoQualificadoController extends Controller
      */
     public function index()
     {
-        
+        $userId = auth()->user()->id;
+        $laudos = LaudoFurtoQualificado::where('user_id', $userId)->paginate(15);
+        return view('laudo-furto-qualificado.index', compact('laudos'));
     }
 
     /**
@@ -64,7 +66,7 @@ class LaudoFurtoQualificadoController extends Controller
             $laudo = LaudoFurtoQualificado::create($data);
 
             return redirect()
-                ->route('home')
+                ->route('laudoFurtoQualificado.index')
                 ->with($request['success'] ? 'success' : 'error', $request['message']);
         } catch (Exception $e) {
             return [
@@ -93,7 +95,8 @@ class LaudoFurtoQualificadoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $laudo = LaudoFurtoQualificado::findOrFail($id);
+        return view('laudo-furto-qualificado.edit', compact('laudo'));
     }
 
     /**
@@ -103,9 +106,41 @@ class LaudoFurtoQualificadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LaudoFurtoQualificadoRequest $request, $id)
     {
-        //
+        try {
+            $data = $request->all();
+            $data = request()->except(['_method', '_token']);
+            $laudoBuscado = LaudoFurtoQualificado::findOrFail($id);
+
+            if (isset($data['foto_1'])) {
+                $data['foto_1'] = $this->uploadFoto($request, 'foto_1', $laudoBuscado);
+            }
+            if (isset($data['foto_2'])) {
+                $data['foto_2'] = $this->uploadFoto($request, 'foto_2', $laudoBuscado);
+            }
+            if (isset($data['foto_3'])) {
+                $data['foto_3'] = $this->uploadFoto($request, 'foto_3', $laudoBuscado);
+            }
+            if (isset($data['foto_4'])) {
+                $data['foto_4'] = $this->uploadFoto($request, 'foto_4', $laudoBuscado);
+            }
+            if (isset($data['foto_5'])) {
+                $data['foto_5'] = $this->uploadFoto($request, 'foto_5', $laudoBuscado);
+            }
+            if (isset($data['foto_6'])) {
+                $data['foto_6'] = $this->uploadFoto($request, 'foto_6', $laudoBuscado);
+            }
+
+            $laudo = LaudoFurtoQualificado::where('id', $id)->update($data);
+
+            return redirect()
+                ->route('laudoFurtoQualificado.index')
+                ->with($request['success'] ? 'success' : 'error', $request['message']);
+
+        } catch (Exception $e) {
+
+        }
     }
 
     /**
