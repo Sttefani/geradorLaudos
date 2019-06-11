@@ -254,7 +254,7 @@
         <option value="alvenaria_bom_acabamento" {{isset($laudo) && $laudo->alvenaria_bom_acabamento === 'concreto' || old('tipo_de_construcao') === 'alvenaria_bom_acabamento' ? 'selected' : ''}}>Alvenaria bom acabamento</option>
         <option value="alvenaria_mau_acabamento" {{isset($laudo) && $laudo->alvenaria_mau_acabamento === 'concreto' || old('tipo_de_construcao') === 'alvenaria_mau_acabamento' ? 'selected' : ''}}>Alvenaria mau acabamento</option>
         <option value="madeira" {{isset($laudo) && $laudo->madeira === 'concreto' || old('tipo_de_construcao') === 'madeira' ? 'selected' : ''}}>Madeira</option>
-        <option value="material_pre_fabricado" {{isset($laudo) && $laudo->material_pre_fabricado === 'concreto' || old('tipo_de_construcao') === 'material_pre_fabricado' ? 'selected' : ''}}>Material pré-fabricado</option>
+        <option value="material_pre_fabricado" {{isset($laudo) && $laudo->material_pre_fabricado === 'material_pre_fabricado' || old('tipo_de_construcao') === 'material_pre_fabricado' ? 'selected' : ''}}>Material pré-fabricado</option>
       </select>
       @error('tipo_de_construcao')
         <span class="invalid-feedback" role="alert">
