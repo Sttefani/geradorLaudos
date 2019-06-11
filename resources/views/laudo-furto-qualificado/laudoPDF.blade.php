@@ -64,7 +64,7 @@
 <body>
 
   <div class="cabecalho">
-    <table width="100%">
+    <table width="100%" style="margin-left: 15px;">
       <tr>
         <td align="left" style="width: 20%;">
           <img src="{{ public_path('imgs/logo1.png') }}" width="100">
@@ -95,12 +95,12 @@
   <br/>
 
   <div class="conteudo">
-    <table width="100%" border="1">
+    <table width="100%" border="1" style="margin-left: 15px;">
       <tr>
         <td class="text-center"><strong>I - HISTÓRICO</strong></td>
       </tr>
       <tr>
-        <td>
+        <td class="paddind-left">
           <p>
             Aos __ dias do mês de __ do ano de dois mil e __ (20__) neste Estado de Roraima e no 
             INSTITUTO DE CRIMINALÍSTICA de conformidade com a legislação e os dispositivos Regulamentares vigentes __ 
@@ -112,7 +112,7 @@
       </tr>
     </table>
 
-    <table width="100%" border="1" style="margin-top: 30px;">
+    <table width="100%" border="1" style="margin-top: 30px; margin-left: 15px;">
       <tr>
         <td colspan="6" class="text-center"><strong>II - DO LOCAL</strong></td>
       </tr>
@@ -241,7 +241,7 @@
       </tr>
     </table>
 
-    <table width="100%" border="1" style="margin-top: 30px;">
+    <table width="100%" border="1" style="margin-top: 30px; margin-left: 15px;">
       <tr>
         <td class="text-center"><strong>III - DOS EXAMES</strong></td>
       </tr>
@@ -252,7 +252,7 @@
       </tr>
     </table>
 
-    <table width="100%" border="1" style="margin-top: 30px;">
+    <table width="100%" border="1" style="margin-top: 30px; margin-left: 15px;">
       <tr>
         <td class="text-center"><strong>IV - CONCLUSÃO</strong></td>
       </tr>
