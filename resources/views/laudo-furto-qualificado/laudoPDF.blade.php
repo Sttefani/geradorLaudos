@@ -16,6 +16,9 @@
       margin: 0;
       padding: 0;
     }
+    .page-break {
+      page-break-after: always;
+    }
     a {
       color: #fff;
       text-decoration: none;
@@ -85,7 +88,7 @@
     <table width="100%">
       <tr>
         <td align="right" style="width: 50%;">
-          <em>Laudo nº___ /18/DPE/IC/PC/SESP/RR</em>
+          <em>Laudo nº{{ $laudo->numero_do_laudo }} /DPE/IC/PC/SESP/RR</em>
         </td>
       </tr>
     </table>
@@ -102,11 +105,13 @@
       <tr>
         <td class="paddind-left">
           <p>
-            Aos __ dias do mês de __ do ano de dois mil e __ (20__) neste Estado de Roraima e no 
-            INSTITUTO DE CRIMINALÍSTICA de conformidade com a legislação e os dispositivos Regulamentares vigentes __ 
-            pelo Diretor __ foram designados os Peritos Criminais __ e __ para procederem 
-            a exame em __ a fim de ser atendida a requisição __ descrevendo com verdade e com todas 
-            as circustâncias o que encontrarem, descobrirem e observarem.
+            Aos {{ date('d/m/Y', strtotime($laudo->data_da_ocorrencia)) }} neste Estado de Roraima e no 
+            INSTITUTO DE CRIMINALÍSTICA de conformidade com a legislação e os dispositivos regulamentares vigentes, 
+            pelo Diretor <strong>{{ $laudo->diretor }}</strong> foi designado o Perito Criminal <strong>{{ $laudo->perito }}</strong>
+            para proceder a <strong>Exame Pericial em local de Crime contra Patrimônio</strong>, a fim de ser atendida a solicitação do 
+            Delegado da <strong>{{ $laudo->autoridade_requisitante }}</strong>, desta capital, feita através da <strong>Requisição de Exame 
+            Pericial nº {{ $laudo->numero_da_requisicao }}</strong>, referente ao {{ $laudo->numero_do_procedimento }}
+            descrevendo fielmente e com todas as circustâncias o que encontrarem e bem assim esclarecerem tudo quanto interessar possa.
           </p>
         </td>
       </tr>
@@ -241,6 +246,8 @@
       </tr>
     </table>
 
+    <div class="page-break"></div>
+
     <table width="100%" border="1" style="margin-top: 30px; margin-left: 15px;">
       <tr>
         <td class="text-center"><strong>III - DOS EXAMES</strong></td>
@@ -262,19 +269,40 @@
         </td>
       </tr>
     </table>
-  </div>
+  
 
-  <div class="information" style="position: absolute; bottom: 0;">
-    <table width="100%">
+    <div class="page-break"></div>
+
+    <table width="100%" border="1" style="margin-top: 30px; margin-left: 15px;">
       <tr>
-        <td align="left" style="width: 50%;">
-          &copy; {{ date('Y') }} {{ config('app.url') }} - All rights reserved.
+        <td class="text-center" colspan="2"><h3>Relatório Fotográfico</h3></td>
+      </tr>
+      <tr>
+        <td style="width: 70%;" class="text-center">Foto</td>
+        <td class="text-center" style="width: 30%;">Comentário</td>
+      </tr>
+      <tr>
+        <td style="width: 70%; padding: 10px;" class="text-center">
+          <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="200" />
         </td>
-        <td align="right" style="width: 50%;">
-          Company Slogan
+        <td style="width: 30%; padding: 10px 5px; vertical-align: top;">
+          <p>{{ $laudo->comentario_1 }}</p>
         </td>
       </tr>
+      @if (isset($laudo->foto_2))
+        <tr>
+          <td style="width: 70%; padding: 10px;">
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="130" />
+          </td>
+          <td style="width: 30%; padding: 10px 5px; vertical-align: top;">
+            <p>{{ $laudo->comentario_2 }}</p>
+          </td>
+        </tr>
+      @endif
     </table>
+  
+  
+
   </div>
 </body>
 
