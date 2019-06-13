@@ -443,49 +443,91 @@
 <fieldset class="scheduler-border">
   <legend class="scheduler-border">V - Fotos do laudo</legend>
   <div class="form-row">
+
     <div class="form-group col-md-7">
-      <label for="foto_1">Foto 1</label>
-      <input type="file" class="form-control" id="foto_1" name="foto_1">
+      <label>Foto 1</label>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-default btn-file">
+            Escolher imagem <input type="file" id="imgInpFoto1" name="foto_1">
+          </span>
+        </span>
+        <input type="text" class="form-control" readonly>
+      </div>
       <textarea id="comentario_1" name="comentario_1" rows="2" placeholder="escreva aqui comentários sobre a 1ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_1 : old('comentario_1') }}</textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
       @if (isset($laudo->foto_1))
-        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="130" alt="foto 1 do laudo" />
+        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="150" id="img-upload1" alt="foto 1 do laudo" />
       @else
-        <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+        <img src="{{url('imgs/picture.png')}}" id="img-upload1">
       @endif
     </div>
   </div>
 
-  <div class="form-row d-none" id="campos-foto2">
+  <div class="form-row" id="campos-foto2">
     <div class="form-group col-md-7" id="campos-foto2">
       <label for="foto_2">Foto 2</label>
-      <input type="file" class="form-control" id="foto_2" name="foto_2">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-default btn-file">
+            Escolher imagem <input type="file" id="imgInpFoto2" name="foto_2">
+          </span>
+        </span>
+        <input type="text" class="form-control" readonly>
+      </div>
       <textarea id="comentario_2" name="comentario_2" rows="2" placeholder="escreva aqui comentários sobre a 2ª foto selecionada..." class="form-control mt-2"></textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
-      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+      @if (isset($laudo->foto_2))
+        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="150" id="img-upload2" alt="foto 2 do laudo" />
+      @else
+        <img src="{{url('imgs/picture.png')}}" id="img-upload2">
+      @endif
     </div>
   </div>
 
-  <div class="form-row d-none" id="campos-foto3">
+  <div class="form-row" id="campos-foto3">
     <div class="form-group col-md-7">
       <label for="foto_3">Foto 3</label>
-      <input type="file" class="form-control" id="foto_3" name="foto_3">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-default btn-file">
+            Escolher imagem <input type="file" id="imgInpFoto3" name="foto_3">
+          </span>
+        </span>
+        <input type="text" class="form-control" readonly>
+      </div>
       <textarea id="comentario_3" name="comentario_3" rows="2" placeholder="escreva aqui comentários sobre a 3ª foto selecionada..." class="form-control mt-2"></textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
-      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+      @if (isset($laudo->foto_3))
+        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_3}") }}" height="150" id="img-upload3" alt="foto 3 do laudo" />
+      @else
+        <img src="{{url('imgs/picture.png')}}" id="img-upload3">
+      @endif
     </div>
   </div>
-  <div class="form-row d-none" id="campos-foto4">
+
+  <div class="form-row" id="campos-foto4">
     <div class="form-group col-md-7">
       <label for="foto_4">Foto 4</label>
-      <input type="file" class="form-control" id="foto_4" name="foto_4">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-default btn-file">
+            Escolher imagem <input type="file" id="imgInpFoto4" name="foto_4">
+          </span>
+        </span>
+        <input type="text" class="form-control" readonly>
+      </div>
       <textarea id="comentario_4" name="comentario_4" rows="2" placeholder="escreva aqui comentários sobre a 4ª foto selecionada..." class="form-control mt-2"></textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
-      <img src="{{url('imgs/picture.png')}}" alt="sem foto">
+      @if (isset($laudo->foto_4))
+        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_4}") }}" height="150" id="img-upload4" alt="foto 4 do laudo" />
+      @else
+        <img src="{{url('imgs/picture.png')}}" id="img-upload4">
+      @endif
     </div>
   </div>
 </fieldset>
@@ -495,9 +537,55 @@
 
 @section('javascript')
 <script>
-  $( document ).ready(function() {
-    console.log( "Tudo ok!" );
-  });
+  $(document).ready( function() {
+    $(document).on('change', '.btn-file :file', function() {
+      var input = $(this),
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+      input.trigger('fileselect', [label]);
+		});
+
+		$('.btn-file :file').on('fileselect', function(event, label) {
+      var input = $(this).parents('.input-group').find(':text'),
+          log = label;
+      
+      if( input.length ) {
+          input.val(log);
+      } else {
+          if( log ) alert(log);
+      }
+		});
+
+		function readURL(input, numeroDaFoto) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+          $('#img-upload'+numeroDaFoto).attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+      }
+		}
+
+		$("#imgInpFoto1").change(function(){
+      readURL(this, '1');
+		});
+    $("#imgInpFoto2").change(function(){
+      readURL(this, '2');
+		});
+    $("#imgInpFoto3").change(function(){
+      readURL(this, '3');
+		});
+    $("#imgInpFoto4").change(function(){
+      readURL(this, '4');
+		});
+    $("#imgInpFoto5").change(function(){
+      readURL(this, '5');
+		});
+    $("#imgInpFoto6").change(function(){
+      readURL(this, '6');
+		});
+	});
 </script>
 @endsection
 
@@ -521,6 +609,34 @@
     width:inherit; /* Or auto */
     padding:0 10px; /* To give a bit of padding on the left and right */
     border-bottom:none;
+  }
+
+
+  /*
+  **** PREVIEW PARA UPLOAD DE FOTO **** 
+  */
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #CCC;
+  }
+  .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
+  #img-upload1, #img-upload2, #img-upload3, #img-upload4, #img-upload5, #img-upload6 {
+    max-height: 150px;
   }
 </style>
 @endsection

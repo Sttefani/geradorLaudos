@@ -278,23 +278,23 @@
         <td class="text-center" colspan="2"><h3>Relatório Fotográfico</h3></td>
       </tr>
       <tr>
-        <td style="width: 70%;" class="text-center">Foto</td>
-        <td class="text-center" style="width: 30%;">Comentário</td>
+        <td style="width: 60%;" class="text-center">Foto</td>
+        <td class="text-center" style="width: 40%;">Comentário</td>
       </tr>
       <tr>
-        <td style="width: 70%; padding: 10px;" class="text-center">
+        <td style="padding: 10px;" class="text-center">
           <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="200" />
         </td>
-        <td style="width: 30%; padding: 10px 5px; vertical-align: top;">
+        <td style="padding: 10px 5px; vertical-align: top;">
           <p>{{ $laudo->comentario_1 }}</p>
         </td>
       </tr>
       @if (isset($laudo->foto_2))
         <tr>
-          <td style="width: 70%; padding: 10px;">
+          <td style="padding: 10px;">
             <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="130" />
           </td>
-          <td style="width: 30%; padding: 10px 5px; vertical-align: top;">
+          <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_2 }}</p>
           </td>
         </tr>
