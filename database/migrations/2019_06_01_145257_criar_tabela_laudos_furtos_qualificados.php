@@ -82,7 +82,7 @@ class CriarTabelaLaudosFurtosQualificados extends Migration
             $table->string('foto_4')->nullable();
             $table->longText('comentario_4')->nullable();
             $table->string('foto_5')->nullable();
-            $table->longText('comentarios_5')->nullable();
+            $table->longText('comentario_5')->nullable();
             $table->string('foto_6')->nullable();
             $table->longText('comentario_6')->nullable();
             $table->softDeletes();

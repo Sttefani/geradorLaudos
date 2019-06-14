@@ -452,7 +452,7 @@
             Escolher imagem <input type="file" id="imgInpFoto1" name="foto_1">
           </span>
         </span>
-        <input type="text" class="form-control" readonly>
+        <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_1) ? $laudo->foto_1 : '' }}">
       </div>
       <textarea id="comentario_1" name="comentario_1" rows="2" placeholder="escreva aqui comentários sobre a 1ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_1 : old('comentario_1') }}</textarea>
     </div>
@@ -474,7 +474,7 @@
             Escolher imagem <input type="file" id="imgInpFoto2" name="foto_2">
           </span>
         </span>
-        <input type="text" class="form-control" readonly>
+        <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_2) ? $laudo->foto_2 : '' }}">
       </div>
       <textarea id="comentario_2" name="comentario_2" rows="2" placeholder="escreva aqui comentários sobre a 2ª foto selecionada..." class="form-control mt-2"></textarea>
     </div>
@@ -496,7 +496,7 @@
             Escolher imagem <input type="file" id="imgInpFoto3" name="foto_3">
           </span>
         </span>
-        <input type="text" class="form-control" readonly>
+        <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_3) ? $laudo->foto_3 : '' }}">
       </div>
       <textarea id="comentario_3" name="comentario_3" rows="2" placeholder="escreva aqui comentários sobre a 3ª foto selecionada..." class="form-control mt-2"></textarea>
     </div>
@@ -518,7 +518,7 @@
             Escolher imagem <input type="file" id="imgInpFoto4" name="foto_4">
           </span>
         </span>
-        <input type="text" class="form-control" readonly>
+        <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_4) ? $laudo->foto_4 : '' }}">
       </div>
       <textarea id="comentario_4" name="comentario_4" rows="2" placeholder="escreva aqui comentários sobre a 4ª foto selecionada..." class="form-control mt-2"></textarea>
     </div>
@@ -530,10 +530,58 @@
       @endif
     </div>
   </div>
+
+  <div class="form-row" id="campos-foto5">
+    <div class="form-group col-md-7">
+      <label for="foto_5">Foto 5</label>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-default btn-file">
+            Escolher imagem <input type="file" id="imgInpFoto5" name="foto_5">
+          </span>
+        </span>
+        <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_5) ? $laudo->foto_5 : '' }}">
+      </div>
+      <textarea id="comentario_5" name="comentario_5" rows="2" placeholder="escreva aqui comentários sobre a 5ª foto selecionada..." class="form-control mt-2"></textarea>
+    </div>
+    <div class="col-md-5 d-flex justify-content-center align-items-center">
+      @if (isset($laudo->foto_5))
+        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_5}") }}" height="150" id="img-upload5" alt="foto 5 do laudo" />
+      @else
+        <img src="{{url('imgs/picture.png')}}" id="img-upload5">
+      @endif
+    </div>
+  </div>
+
+  <div class="form-row" id="campos-foto6">
+    <div class="form-group col-md-7">
+      <label for="foto_6">Foto 6</label>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-default btn-file">
+            Escolher imagem <input type="file" id="imgInpFoto6" name="foto_6">
+          </span>
+        </span>
+        <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_6) ? $laudo->foto_6 : '' }}">
+      </div>
+      <textarea id="comentario_6" name="comentario_6" rows="2" placeholder="escreva aqui comentários sobre a 6ª foto selecionada..." class="form-control mt-2"></textarea>
+    </div>
+    <div class="col-md-5 d-flex justify-content-center align-items-center">
+      @if (isset($laudo->foto_6))
+        <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_6}") }}" height="150" id="img-upload6" alt="foto 6 do laudo" />
+      @else
+        <img src="{{url('imgs/picture.png')}}" id="img-upload6">
+      @endif
+    </div>
+  </div>
 </fieldset>
 
 <a href="{{ route('home') }}" class="btn btn-light">Cancelar</a>
-<button type="submit" class="btn btn-primary">Realizar o cadastro</button>
+@if (isset($laudo))
+  <button type="submit" class="btn btn-primary">Alterar laudo</button>
+@else
+  <button type="submit" class="btn btn-primary">Realizar o cadastro</button>
+@endif
 
 @section('javascript')
 <script>
