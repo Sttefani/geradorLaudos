@@ -40,7 +40,7 @@
               <img src="{{ url("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" width="80" alt="foto 1 do laudo" />
             @endif
           </td>
-          <td style="min-width: 95px;">
+          <td style="min-width: 95px;" id="btn-acoes">
             <a href="{{ route('laudoFurtoQualificado.edit', $laudo->id) }}">
               <img src="{{url('imgs/edit.png')}}" alt="editar laudo">
             </a>

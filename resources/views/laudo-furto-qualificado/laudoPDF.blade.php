@@ -228,8 +228,8 @@
       </tr>
       <tr>
         <td colspan="4" class="paddind-left">
-          Proprietário: <em>{{ $laudo->proprietario_posseiro }}</em> <br>
-          Rua: <em>{{ $laudo->endereco }}</em> | Cidade: <em>{{ $laudo->cidade }}</em>
+          <strong>Proprietário:</strong> <em>{{ $laudo->proprietario_posseiro }}</em> <br>
+          <strong>Rua:</strong> <em>{{ $laudo->endereco }}</em> | <strong>Cidade:</strong> <em>{{ $laudo->cidade }}</em>
         </td>
         <td colspan="2">
           <table width="80%">
@@ -269,6 +269,17 @@
         </td>
       </tr>
     </table>
+
+    <hr style="margin-top: 50px; margin-left: 90px;" width="80%">
+
+    <table width="100%" style="margin-top: 10px; margin-left: 15px;">
+      <tr>
+        <td class="text-center"><h2>{{ auth()->user()->name }}</h2></td>
+      </tr>
+      <tr>
+        <td class="text-center"><h3>Perito Criminal</h3></td>
+      </tr>
+    </table>
   
 
     <div class="page-break"></div>
@@ -283,7 +294,7 @@
       </tr>
       <tr>
         <td style="padding: 10px;" class="text-center">
-          <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="210" />
+          <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="200" />
         </td>
         <td style="padding: 10px 5px; vertical-align: top;">
           <p>{{ $laudo->comentario_1 }}</p>
@@ -292,7 +303,7 @@
       @if (isset($laudo->foto_2))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="210" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="200" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_2 }}</p>
@@ -302,7 +313,7 @@
       @if (isset($laudo->foto_3))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_3}") }}" height="210" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_3}") }}" height="200" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_3 }}</p>
@@ -312,10 +323,30 @@
       @if (isset($laudo->foto_4))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_4}") }}" height="210" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_4}") }}" height="200" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_4 }}</p>
+          </td>
+        </tr>
+      @endif
+      @if (isset($laudo->foto_5))
+        <tr>
+          <td style="padding: 10px;" class="text-center">
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_5}") }}" height="200" />
+          </td>
+          <td style="padding: 10px 5px; vertical-align: top;">
+            <p>{{ $laudo->comentario_5 }}</p>
+          </td>
+        </tr>
+      @endif
+      @if (isset($laudo->foto_6))
+        <tr>
+          <td style="padding: 10px;" class="text-center">
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_6}") }}" height="200" />
+          </td>
+          <td style="padding: 10px 5px; vertical-align: top;">
+            <p>{{ $laudo->comentario_6 }}</p>
           </td>
         </tr>
       @endif

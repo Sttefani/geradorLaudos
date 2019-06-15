@@ -476,7 +476,7 @@
         </span>
         <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_2) ? $laudo->foto_2 : '' }}">
       </div>
-      <textarea id="comentario_2" name="comentario_2" rows="2" placeholder="escreva aqui comentários sobre a 2ª foto selecionada..." class="form-control mt-2"></textarea>
+      <textarea id="comentario_2" name="comentario_2" rows="2" placeholder="escreva aqui comentários sobre a 2ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_2 : old('comentario_2') }}</textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
       @if (isset($laudo->foto_2))
@@ -498,7 +498,7 @@
         </span>
         <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_3) ? $laudo->foto_3 : '' }}">
       </div>
-      <textarea id="comentario_3" name="comentario_3" rows="2" placeholder="escreva aqui comentários sobre a 3ª foto selecionada..." class="form-control mt-2"></textarea>
+      <textarea id="comentario_3" name="comentario_3" rows="2" placeholder="escreva aqui comentários sobre a 3ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_3 : old('comentario_3') }}</textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
       @if (isset($laudo->foto_3))
@@ -520,7 +520,7 @@
         </span>
         <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_4) ? $laudo->foto_4 : '' }}">
       </div>
-      <textarea id="comentario_4" name="comentario_4" rows="2" placeholder="escreva aqui comentários sobre a 4ª foto selecionada..." class="form-control mt-2"></textarea>
+      <textarea id="comentario_4" name="comentario_4" rows="2" placeholder="escreva aqui comentários sobre a 4ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_4 : old('comentario_4') }}</textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
       @if (isset($laudo->foto_4))
@@ -542,7 +542,7 @@
         </span>
         <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_5) ? $laudo->foto_5 : '' }}">
       </div>
-      <textarea id="comentario_5" name="comentario_5" rows="2" placeholder="escreva aqui comentários sobre a 5ª foto selecionada..." class="form-control mt-2"></textarea>
+      <textarea id="comentario_5" name="comentario_5" rows="2" placeholder="escreva aqui comentários sobre a 5ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_5 : old('comentario_5') }}</textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
       @if (isset($laudo->foto_5))
@@ -564,7 +564,7 @@
         </span>
         <input type="text" class="form-control" readonly value="{{ isset($laudo->foto_6) ? $laudo->foto_6 : '' }}">
       </div>
-      <textarea id="comentario_6" name="comentario_6" rows="2" placeholder="escreva aqui comentários sobre a 6ª foto selecionada..." class="form-control mt-2"></textarea>
+      <textarea id="comentario_6" name="comentario_6" rows="2" placeholder="escreva aqui comentários sobre a 6ª foto selecionada..." class="form-control mt-2">{{ isset($laudo) ? $laudo->comentario_5 : old('comentario_5') }}</textarea>
     </div>
     <div class="col-md-5 d-flex justify-content-center align-items-center">
       @if (isset($laudo->foto_6))
@@ -582,109 +582,3 @@
 @else
   <button type="submit" class="btn btn-primary">Realizar o cadastro</button>
 @endif
-
-@section('javascript')
-<script>
-  $(document).ready( function() {
-    $(document).on('change', '.btn-file :file', function() {
-      var input = $(this),
-        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-      input.trigger('fileselect', [label]);
-		});
-
-		$('.btn-file :file').on('fileselect', function(event, label) {
-      var input = $(this).parents('.input-group').find(':text'),
-          log = label;
-      
-      if( input.length ) {
-          input.val(log);
-      } else {
-          if( log ) alert(log);
-      }
-		});
-
-		function readURL(input, numeroDaFoto) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        
-        reader.onload = function (e) {
-          $('#img-upload'+numeroDaFoto).attr('src', e.target.result);
-        }
-        
-        reader.readAsDataURL(input.files[0]);
-      }
-		}
-
-		$("#imgInpFoto1").change(function(){
-      readURL(this, '1');
-		});
-    $("#imgInpFoto2").change(function(){
-      readURL(this, '2');
-		});
-    $("#imgInpFoto3").change(function(){
-      readURL(this, '3');
-		});
-    $("#imgInpFoto4").change(function(){
-      readURL(this, '4');
-		});
-    $("#imgInpFoto5").change(function(){
-      readURL(this, '5');
-		});
-    $("#imgInpFoto6").change(function(){
-      readURL(this, '6');
-		});
-	});
-</script>
-@endsection
-
-@section('stylecss')
-<style>
-  fieldset.scheduler-border {
-    border: 1px groove #ddd !important;
-    padding: 0 1.4em 1.4em 1.4em !important;
-    margin: 0 0 1.5em 0 !important;
-    -webkit-box-shadow:  0px 0px 0px 0px #000;
-            box-shadow:  0px 0px 0px 0px #000;
-  }
-
-  legend.scheduler-border {
-      font-size: 1.2em !important;
-      font-weight: bold !important;
-      text-align: left !important;
-  }
-
-  legend.scheduler-border {
-    width:inherit; /* Or auto */
-    padding:0 10px; /* To give a bit of padding on the left and right */
-    border-bottom:none;
-  }
-
-
-  /*
-  **** PREVIEW PARA UPLOAD DE FOTO **** 
-  */
-  .btn-file {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #CCC;
-  }
-  .btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-  }
-  #img-upload1, #img-upload2, #img-upload3, #img-upload4, #img-upload5, #img-upload6 {
-    max-height: 150px;
-  }
-</style>
-@endsection
