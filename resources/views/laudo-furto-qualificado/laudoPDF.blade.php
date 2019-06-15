@@ -278,12 +278,12 @@
         <td class="text-center" colspan="2"><h3>Relatório Fotográfico</h3></td>
       </tr>
       <tr>
-        <td style="width: 60%;" class="text-center">Foto</td>
-        <td class="text-center" style="width: 40%;">Comentário</td>
+        <td style="width: 50%;" class="text-center">Foto</td>
+        <td style="width: 50%;" class="text-center">Comentário</td>
       </tr>
       <tr>
         <td style="padding: 10px;" class="text-center">
-          <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="200" />
+          <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="210" />
         </td>
         <td style="padding: 10px 5px; vertical-align: top;">
           <p>{{ $laudo->comentario_1 }}</p>
@@ -291,17 +291,35 @@
       </tr>
       @if (isset($laudo->foto_2))
         <tr>
-          <td style="padding: 10px;">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="130" />
+          <td style="padding: 10px;" class="text-center">
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="210" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_2 }}</p>
           </td>
         </tr>
       @endif
+      @if (isset($laudo->foto_3))
+        <tr>
+          <td style="padding: 10px;" class="text-center">
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_3}") }}" height="210" />
+          </td>
+          <td style="padding: 10px 5px; vertical-align: top;">
+            <p>{{ $laudo->comentario_3 }}</p>
+          </td>
+        </tr>
+      @endif
+      @if (isset($laudo->foto_4))
+        <tr>
+          <td style="padding: 10px;" class="text-center">
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_4}") }}" height="210" />
+          </td>
+          <td style="padding: 10px 5px; vertical-align: top;">
+            <p>{{ $laudo->comentario_4 }}</p>
+          </td>
+        </tr>
+      @endif
     </table>
-  
-  
 
   </div>
 </body>
