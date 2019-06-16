@@ -61,6 +61,9 @@
     .conteudo table {
       border-collapse: collapse;
     }
+    input[type="checkbox"]:checked {
+      background: #696969;
+    }
   </style>
 
 </head>
@@ -282,19 +285,7 @@
           <p>{{ $laudo->conclusao }}</p>
         </td>
       </tr>
-    </table>
-
-    <hr style="margin-top: 50px; margin-left: 90px;" width="80%">
-
-    <table width="100%" style="margin-top: 10px; margin-left: 15px;">
-      <tr>
-        <td class="text-center"><h2>{{ auth()->user()->name }}</h2></td>
-      </tr>
-      <tr>
-        <td class="text-center"><h3>Perito Criminal</h3></td>
-      </tr>
-    </table>
-  
+    </table>  
 
     <div class="page-break"></div>
 
