@@ -65,6 +65,20 @@
 
 </head>
 <body>
+  <script type="text/php">
+    if ( isset($pdf) ) {
+      $x = 240;
+      $y = 764;
+      $text = "{{ auth()->user()->name }} - Perito Criminal";
+      $font = $fontMetrics->get_font("helvetica", "bold");
+      $size = 10;
+      $color = array(0,0,0);
+      $word_space = 0.0;  //  default
+      $char_space = 0.0;  //  default
+      $angle = 0.0;   //  default
+      $pdf->page_text($x, $y, $text, $font, $size, $color, $word_space, $char_space, $angle);
+    }
+  </script>
 
   <div class="cabecalho">
     <table width="100%" style="margin-left: 15px;">
