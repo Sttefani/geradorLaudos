@@ -117,7 +117,7 @@
   <br/>
 
   <div class="conteudo">
-    <table width="100%" border="1" style="margin-left: 15px;">
+    <table width="100%" border="1" style="margin-top: -40px; margin-left: 15px;">
       <tr>
         <td class="text-center"><strong>I - HISTÓRICO</strong></td>
       </tr>
@@ -263,16 +263,14 @@
           </table>
         </td>
       </tr>
-
       <tr>
-        <td colspan="6" class="paddind-left">COMPLEMENTAR</td>
-      </tr>
-      <tr>
-        <td colspan="6" class="paddind-left">
-          <strong>Data e hora do acionamento:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <em>{{ date('d/m/Y', strtotime($laudo->data_do_acionamento)) }} {{ date('h:i', strtotime($laudo->hora_do_acionamento)) }}</em><br>
-          <strong>Data e hora de chegada ao local:</strong>&nbsp;&nbsp;&nbsp;
-          <em>{{ date('d/m/Y', strtotime($laudo->data_da_chegada_local)) }} {{ date('h:i', strtotime($laudo->hora_da_chegada_local)) }}</em>
+        <td colspan="3" class="paddind-left">
+          <strong>Data e hora do acionamento:</strong> 
+          <em>{{ date('d/m/Y', strtotime($laudo->data_do_acionamento)) }} {{ date('h:i', strtotime($laudo->hora_do_acionamento)) }}</em>
+        </td>
+        <td colspan="3" class="paddind-left">
+            <strong>Data e hora de chegada ao local:</strong>
+            <em>{{ date('d/m/Y', strtotime($laudo->data_da_chegada_local)) }} {{ date('h:i', strtotime($laudo->hora_da_chegada_local)) }}</em>
         </td>
       </tr>
     </table>
