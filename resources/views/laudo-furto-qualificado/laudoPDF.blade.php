@@ -5,13 +5,10 @@
   <title>Invoice - #123</title>
 
   <style type="text/css">
-    @page {
-        margin: 0px;
-    }
     body {
         margin: 0px;
     }
-    * {
+    p, h3, h4, h5 {
       font-family: Verdana, Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -64,24 +61,29 @@
     input[type="checkbox"]:checked {
       background: #696969;
     }
+
+    @page { margin: 0 0 100px 0; }
+    #footer { 
+      position: fixed; 
+      left: 0px; 
+      text-align: center;
+      bottom: -180px; 
+      right: 0px; 
+      height: 135px; 
+      background-color: #ECECEC;
+      padding-top: 5px;
+    }
+    #footer .page:after { content: counter(page, upper-roman); }
   </style>
 
 </head>
 <body>
-  <script type="text/php">
-    if ( isset($pdf) ) {
-      $x = 240;
-      $y = 764;
-      $text = "{{ auth()->user()->name }} - Perito Criminal";
-      $font = $fontMetrics->get_font("helvetica", "bold");
-      $size = 10;
-      $color = array(0,0,0);
-      $word_space = 0.0;  //  default
-      $char_space = 0.0;  //  default
-      $angle = 0.0;   //  default
-      $pdf->page_text($x, $y, $text, $font, $size, $color, $word_space, $char_space, $angle);
-    }
-  </script>
+
+  <div id="footer">
+    <p><strong>{{ auth()->user()->name }}</strong></p>
+    <p style="font-size: 14px">Perito Criminal</p>
+    <p class="page" style="font-size: 10px"><em>Página </em></p>
+  </div>
 
   <div class="cabecalho">
     <table width="100%" style="margin-left: 15px;">
@@ -261,6 +263,18 @@
           </table>
         </td>
       </tr>
+
+      <tr>
+        <td colspan="6" class="paddind-left">COMPLEMENTAR</td>
+      </tr>
+      <tr>
+        <td colspan="6" class="paddind-left">
+          <strong>Data e hora do acionamento:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <em>{{ date('d/m/Y', strtotime($laudo->data_do_acionamento)) }} {{ date('h:i', strtotime($laudo->hora_do_acionamento)) }}</em><br>
+          <strong>Data e hora de chegada ao local:</strong>&nbsp;&nbsp;&nbsp;
+          <em>{{ date('d/m/Y', strtotime($laudo->data_da_chegada_local)) }} {{ date('h:i', strtotime($laudo->hora_da_chegada_local)) }}</em>
+        </td>
+      </tr>
     </table>
 
     <div class="page-break"></div>
@@ -299,7 +313,7 @@
       </tr>
       <tr>
         <td style="padding: 10px;" class="text-center">
-          <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="200" />
+          <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_1}") }}" height="190" />
         </td>
         <td style="padding: 10px 5px; vertical-align: top;">
           <p>{{ $laudo->comentario_1 }}</p>
@@ -308,7 +322,7 @@
       @if (isset($laudo->foto_2))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="200" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_2}") }}" height="190" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_2 }}</p>
@@ -318,7 +332,7 @@
       @if (isset($laudo->foto_3))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_3}") }}" height="200" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_3}") }}" height="190" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_3 }}</p>
@@ -328,7 +342,7 @@
       @if (isset($laudo->foto_4))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_4}") }}" height="200" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_4}") }}" height="190" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_4 }}</p>
@@ -338,7 +352,7 @@
       @if (isset($laudo->foto_5))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_5}") }}" height="200" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_5}") }}" height="190" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_5 }}</p>
@@ -348,7 +362,7 @@
       @if (isset($laudo->foto_6))
         <tr>
           <td style="padding: 10px;" class="text-center">
-            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_6}") }}" height="200" />
+            <img src="{{ public_path("storage/laudosFurtoQualificado/{$laudo->foto_6}") }}" height="190" />
           </td>
           <td style="padding: 10px 5px; vertical-align: top;">
             <p>{{ $laudo->comentario_6 }}</p>

@@ -159,7 +159,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_frontal">Recuo frontal</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_frontal" name="recuo_frontal" value="{{ isset($laudo) ? $laudo->recuo_frontal : old('recuo_frontal') }}">
+        <input type="number" class="form-control" id="recuo_frontal" name="recuo_frontal" step="0.5" value="{{ isset($laudo) ? $laudo->recuo_frontal : old('recuo_frontal') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -168,7 +168,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_lateral_direita">Recuo lateral direta</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_lateral_direita" name="recuo_lateral_direita" value="{{ isset($laudo) ? $laudo->recuo_lateral_direita : old('recuo_lateral_direita') }}">
+        <input type="number" class="form-control" id="recuo_lateral_direita" step="0.5" name="recuo_lateral_direita" value="{{ isset($laudo) ? $laudo->recuo_lateral_direita : old('recuo_lateral_direita') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -177,7 +177,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_lateral_esquerda">Recuo lateral esquerda</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_lateral_esquerda" name="recuo_lateral_esquerda" value="{{ isset($laudo) ? $laudo->recuo_lateral_esquerda : old('recuo_lateral_esquerda') }}">
+        <input type="number" class="form-control" id="recuo_lateral_esquerda" step="0.5" name="recuo_lateral_esquerda" value="{{ isset($laudo) ? $laudo->recuo_lateral_esquerda : old('recuo_lateral_esquerda') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -186,7 +186,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="recuo_fundos">Recuo fundos</label>
       <div class="input-group">
-        <input type="number" class="form-control" id="recuo_fundos" name="recuo_fundos" value="{{ isset($laudo) ? $laudo->recuo_fundos : old('recuo_fundos') }}">
+        <input type="number" class="form-control" id="recuo_fundos" step="0.5" name="recuo_fundos" value="{{ isset($laudo) ? $laudo->recuo_fundos : old('recuo_fundos') }}">
         <div class="input-group-append">
           <span class="input-group-text" id="basic-addon2">m</span>
         </div>
@@ -195,7 +195,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="area_do_imovel">Área do imóvel</label>
       <div class="input-group">
-        <input type="number" id="area_do_imovel" name="area_do_imovel" value="{{ isset($laudo) ? $laudo->area_do_imovel : old('area_do_imovel') }}"
+        <input type="number" id="area_do_imovel" name="area_do_imovel" step="0.5" value="{{ isset($laudo) ? $laudo->area_do_imovel : old('area_do_imovel') }}"
           class="form-control @error('area_do_imovel') is-invalid @enderror"
         >
         <div class="input-group-append">
@@ -211,7 +211,7 @@
     <div class="form-group col-lg-4 col-md-6">
       <label for="area_construida">Área construída</label>
       <div class="input-group">
-        <input type="number" id="area_construida" name="area_construida" value="{{ isset($laudo) ? $laudo->area_construida : old('area_construida') }}"
+        <input type="number" id="area_construida" step="0.5" name="area_construida" value="{{ isset($laudo) ? $laudo->area_construida : old('area_construida') }}"
           class="form-control @error('area_do_imovel') is-invalid @enderror"
         >
         <div class="input-group-append">
